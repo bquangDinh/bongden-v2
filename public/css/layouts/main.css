@@ -1,0 +1,251 @@
+@font-face{
+	font-family: Roboto-Regular;
+	src: url('../../fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face{
+	font-family: Roboto-Light;
+	src: url('../../fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face{
+	font-family: Roboto-Medium;
+	src: url('../../fonts/Roboto/Roboto-Medium.ttf');
+}
+
+body,html{
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+button{
+  cursor: pointer;
+  border:0;
+  background-color: transparent;
+}
+
+.page-wrapper{
+  overflow: hidden;
+  height: auto;
+}
+
+.hamburger{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 1000;
+  background-color: transparent;
+  border: 0
+}
+
+.header-mobile__bar{
+	background-color: #303D4D;
+	height: 90px;
+}
+
+.navbar-mobile{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.navbar-mobile::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: -15px;
+  background-color: #FEDC2A;
+  transform-origin: 0 0;
+  transform: skew(-14deg) translateX(-120%);
+  transition: all .2s .1s;
+}
+
+.navbar-mobile.is-open{
+  opacity: 1;
+  z-index: 999;
+  visibility: visible;
+}
+
+.navbar-mobile.is-open::before{
+  transform: skew(-14deg) translateX(0);
+}
+
+.navbar-mobile .is-open{
+  opacity: 1;
+  z-index: 999;
+  visibility: visible;
+}
+
+.navbar-mobile ul{
+  display: inline-flex;
+  flex-direction: column;
+  height: 93%;
+  align-items: flex-end;
+  justify-content: center;
+  transform: translateX(-18%) skew(-16deg);
+}
+
+.navbar-mobile li{
+  display: block;
+  margin: .5rem 0;
+  text-align: right;
+  transform: skew(16deg);
+}
+
+.navbar-mobile a{
+  opacity: 0;
+  transform: translateY(-10px);
+  font-family: Roboto-Medium;
+}
+
+.navbar-mobile li:nth-child(1) a{
+  transition: all 275ms 175ms;
+}
+
+.navbar-mobile li:nth-child(2) a{
+  transition: all 275ms 225ms;
+}
+
+.navbar-mobile li:nth-child(3) a{
+  transition: all 275ms 275ms;
+}
+
+.navbar-mobile li:nth-child(4) a{
+  transition: all 275ms 325ms;
+}
+
+.navbar-mobile li:nth-child(5) a{
+  transition: all 275ms 375ms;
+}
+
+.navbar-mobile.is-open a{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-mobile ul,.navbar-mobile li{
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-mobile a{
+  display: block;
+  padding: 12px 0;
+  color: #5A3B5D;
+  font-size: 1.4em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-desktop a{
+  font-family: Roboto-Regular;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #4F5D6A;
+}
+
+.navbar-desktop{
+  background-color: #303D4D;
+  height: 100px;
+}
+
+.navbar-desktop ul{
+  margin-top: 20px;
+}
+
+.navbar-desktop ul li{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-desktop ul:first-child li:hover{
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.navbar-desktop ul:first-child li:hover a{
+  color: #ecf0f1;
+}
+
+.nav-right-item{
+  color: #ecf0f1;
+  font-size: 1.3em;
+}
+
+#search-field{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ecf0f1;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+#search-field #search-field__content{
+  border: 0;
+  height: 100px;
+  width: 100%;
+  color: gray;
+  font-size: 3em;
+  background-color: transparent;
+  font-family: Roboto-Medium;
+  outline: 0;
+}
+
+#search-field.is-open{
+  z-index: 999;
+  visibility: visible;
+  opacity: 1;
+}
+
+#search-field #search-field-close-btn{
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e74c3c;
+  color: #ecf0f1;
+  font-size: 1.3em;
+  transition: all .3s;
+}
+
+#search-field #search-field-close-btn:before{
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 90%;
+  height: 90%;
+  transform-origin: center;
+  transform: scale(0,0);
+  border-radius: 50%;
+  background-color: #ecf0f1;
+  transition: all .2s;
+}
+
+#search-field #search-field-close-btn:hover:before{
+  transform: scale(1,1);
+}
+
+#search-field #search-field-close-btn:hover i{
+  color:  #e74c3c;
+}
+
+#search-field #search-field-close-btn i{
+  position: relative;
+  z-index: 999;
+}
