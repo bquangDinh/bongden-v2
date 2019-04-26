@@ -13,7 +13,7 @@
 <div class="first-panel">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6 col-md-5 col-sm-12">
+      <div class="col-lg-7 col-md-10">
         <div class="left-side-panel">
           <div class="slider-container ml-4">
             <div>
@@ -48,29 +48,32 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5 col-md-6 d-lg-block d-sm-none">
-        <div class="picture-of-month-container">
-          <div class="row">
-            <div class="col-2">
-              <div class="picture-info">
-                <span>NO:114</span>
-                <span>THE BEST PICTURE OF MONTH</span>
+      <div class="col-lg-4 d-lg-block d-sm-none">
+        <div class="m-picture-container">
+          <div class="m-picture__leftside">
+            <span>NO: 144</span>
+            <span>THE BEST PICTURE OF MONTH</span>
+          </div>
+          <div class="m-picture__rightside">
+            <img class="picture" src="https://media.wired.com/photos/5cadec1fb75f9b23c6466d74/master/pass/blackhole.jpg" alt="">
+            <div class="picture-info">
+              <div style="width: 100%;">
+                <div style="float: right;margin-right: 20px;margin-top: 10px;font-family: Roboto-Medium">NO. 144</div>
+                <div style="clear:right"></div>
               </div>
-            </div>
-            <div class="col-10">
-              <div class="picture-container">
-                <img src="https://i.ytimg.com/vi/GLXM690z9uY/maxresdefault.jpg"/>
-                <div class="picture-detail-panel">
-                  <span>No. 144</span>
-                  <p class="name-picture">BLACK HOLE</p>
-                  <div class="picture-description">"It will be an image of its silhouette sliding against the background glow of radiation of the heart of the Milky Way," he said. "That photograph will reveal the contours of a black hole for the first time."</div>
-                </div>
+              <div class="picture-title">
+                BLACK HOLE
+              </div>
+              <div class="picture-description">
+                <p>
+                  The black hole itself – a cosmic trapdoor from which neither light nor matter can escape – is unseeable. But the latest observations take astronomers right to its threshold for the first time, illuminating the event horizon beyond which all known physical laws collapse.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-1 col-sm-12">
+      <div class="col-lg-1 col-md-12">
         <div class="sharing-container">
           <button type="button" class="sharing-btn">
             <i class="fab fa-facebook-square"></i>
@@ -84,8 +87,6 @@
   </div>
 </div>
 
-<!-- Phong -->
-<!-- Phong edited -->
 @endsection
 
 @section('js')

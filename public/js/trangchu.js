@@ -1,4 +1,4 @@
-$(".picture-detail-panel").on('click',function(e){
+$(".picture-info").on('click',function(e){
   $(this).toggleClass("is-open");
 });
 

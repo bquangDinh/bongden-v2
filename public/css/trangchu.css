@@ -3,106 +3,6 @@
   height: 550px;
 }
 
-@media only screen and (max-width:992px){
-
-}
-
-.picture-of-month-container{
-  height: 550px;
-}
-
-.picture-of-month-container .picture-info{
-  height: 100%;
-  width: 100%;
-}
-
-.picture-of-month-container .picture-info span{
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 12px;
-  color: #4F5D6A;
-  position: absolute;
-}
-
-.picture-of-month-container .picture-info span:nth-child(1){
-  top: 20px;
-}
-
-.picture-of-month-container .picture-info span:nth-child(2){
-  bottom: 20px;
-}
-
-.picture-of-month-container .picture-container{
-  width: 100%;
-  height: 550px;
-  position: relative;
-}
-
-.picture-of-month-container .picture-container img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.picture-of-month-container .picture-container .picture-detail-panel{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  opacity: 0;
-  display: block;
-  cursor: pointer;
-  transition: opacity .3s;
-}
-
-.picture-of-month-container .picture-container .picture-detail-panel.is-open{
-  opacity: 0.8;
-}
-
-.picture-guide{
-  position: absolute;
-  bottom: 15px;
-  left: 35%;
-  text-align: center;
-  font-size: 15px;
-  color: #ecf0f1;
-}
-
-.picture-of-month-container .picture-container .picture-detail-panel span{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 15px;
-  color: #ecf0f1;
-  font-weight: bold;
-}
-
-.picture-of-month-container .picture-container .picture-detail-panel .name-picture{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 40px;
-  text-align: center;
-  font-size: 2em;
-  color: #ecf0f1;
-  font-family: Roboto-Medium;
-  font-weight: bold;
-}
-
-.picture-of-month-container .picture-container .picture-detail-panel .picture-description{
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 40px;
-  text-align: justify;
-  font-size: 1.2em;
-  color: #ecf0f1;
-  padding: 10px;
-  border-top: 3px solid white;
-}
-
 .sharing-container{
   height: 500px;
   width: 100%;
@@ -181,6 +81,23 @@
   bottom: 40%;
 }
 
+@keyframes wideInOut{
+  0%{
+    width: 50px;
+    background-color: gray;
+  }
+
+  50%{
+    width: 150px;
+    background-color: white;
+  }
+
+  100%{
+    width: 50px;
+    background-color: gray;
+  }
+}
+
 .fun-fact-container .fun-fact-content:before{
   content: '';
   position: absolute;
@@ -189,6 +106,111 @@
   width: 50px;
   height: 3px;
   background-color: gray;
+  animation: wideInOut 2.5s infinite;
+}
+
+.m-picture-container{
+  width: 100%;
+  height: 550px;
+  position: relative;
+}
+
+.m-picture-container .m-picture__leftside{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -15px;
+  width: 15px;
+}
+
+.m-picture-container .m-picture__leftside span{
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  color: #4F5D6A;
+}
+
+.m-picture-container .m-picture__leftside span:nth-child(1){
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+}
+
+.m-picture-container .m-picture__leftside span:nth-child(2){
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+}
+
+.m-picture-container .m-picture__rightside{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  right: 0;
+}
+
+.m-picture-container .m-picture__rightside .picture{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.m-picture-container .m-picture__rightside .picture-info{
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0;
+  transition: opacity .3s;
+  cursor: pointer;
+}
+
+.m-picture-container .m-picture__rightside .picture-info.is-open{
+  opacity: 0.7;
+}
+
+.m-picture-container .m-picture__rightside .picture-info *{
+  color: white;
+}
+
+.m-picture-container .m-picture__rightside .picture-info .picture-title{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Roboto-Medium;
+  font-size: 2.5em;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.m-picture-container .m-picture__rightside .picture-info .picture-description{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+
+.m-picture-container .m-picture__rightside .picture-info .picture-description:before{
+  position: absolute;
+  top: -10px;
+  left: 30%;
+  right: 30%;
+  height: 3px;
+  content: '';
+  background-color: white;
+}
+
+.m-picture-container .m-picture__rightside .picture-info .picture-description p{
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: justify;
+  font-family: Roboto-Regular;
 }
 
 @media only screen and (max-width: 992px){
@@ -202,4 +224,9 @@
   .left-side-panel{
     height: 500px;
   }
+}
+
+/*Break points*/
+@media only screen and (max-width:992px){
+
 }
