@@ -35,13 +35,19 @@
         <nav class="navbar-mobile">
           <ul class="navbar-mobile__list list-unstyled">
             <li>
-              <a href="#">HOMEPAGE</a>
+              <a href="#">TRANG CHỦ</a>
             </li>
             <li>
-              <a href="#">HOMEPAGE</a>
+              <a href="#">CHÚNG MÌNH</a>
             </li>
             <li>
-              <a href="#">HOMEPAGE</a>
+              <a href="#">BÀI VIẾT</a>
+            </li>
+            <li>
+              <a href="#">ẢNH</a>
+            </li>
+            <li>
+              <a href="#">VONFRAM LAB</a>
             </li>
           </ul>
         </nav>
@@ -52,13 +58,19 @@
         <nav class="navbar navbar-expand-sm">
           <ul class="navbar-nav" style="margin-left:20px;">
             <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">HOMEPAGE</a>
+              <a href="#" class="nav-link nav-btt">TRANG CHỦ</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">HOMEPAGE</a>
+              <a href="#" class="nav-link nav-btt">CHÚNG MÌNH</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">HOMEPAGE</a>
+              <a href="#" class="nav-link nav-btt">BÀI VIẾT</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link nav-btt">VONFRAM LAB</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link nav-btt">ẢNH</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto" style="margin-right:20px">

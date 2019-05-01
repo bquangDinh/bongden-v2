@@ -4,7 +4,6 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 <link rel="stylesheet" href="{{ URL::asset('css/trangchu.css') }}">
 @endsection
@@ -48,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 d-lg-block d-sm-none">
+      <div class="col-lg-4 d-lg-block d-none">
         <div class="m-picture-container">
           <div class="m-picture__leftside">
             <span>NO: 144</span>
@@ -87,9 +86,47 @@
   </div>
 </div>
 
+<div class="event-container">
+  <div class="event-grid-layout">
+    <div class="event-name">
+      <div class="name">
+        SCIENCE FAIR
+      </div>
+    </div>
+    <div class="event-1st-image">
+      <img src="https://1p9lux1bgltk3pgfdt2f69ds-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/15836824_web1_Science_Fair_5.jpg">
+    </div>
+    <div class="event-2th-image">
+      <img src="https://i.ytimg.com/vi/xqQCckZhSww/maxresdefault.jpg">
+    </div>
+    <div class="event-description">
+      <div class="description">
+
+A device that uses the resonance principle of Korean bells to harvest pressure energy and reduce pressure in high-speed railway tunnels by using pressure waves generated in the tunnel.
+
+A device that uses the resonance principle of Korean bells to harvest pressure energy and reduce pressure in high-speed railway tunnels by using pressure waves generated in the tunnel
+
+A device that uses the resonance principle of Korean bells to harvest pressure energy and reduce pressure in high-speed railway tunnels by using pressure waves generated in the tunnel
+      </div>
+      <div style="width: 100%;position: absolute;left: 0;right: 0;bottom: 15px;" class="d-flex justify-content-center">
+        <button class="read-more-btn">READ MORE</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="event-controller">
+
+</div>
+
+<hr />
+
+<div class="media-container">
+  <video class="video" controls>
+    <source src="{{ URL::asset('sources/videos/test.mp4') }}" type="video/mp4">
+  </video>
+</div>
 @endsection
 
 @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="{{ URL::asset('js/trangchu.js') }}"></script>
 @endsection

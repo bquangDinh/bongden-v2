@@ -44,8 +44,7 @@ slideFunfact.prototype.slide = function(panelIndex){
   setTimeout(function(){
     $(that.funfactPanelID + that.currentFunfactIndex).removeClass("is-active");
     that.currentFunfactIndex = panelIndex;
-    console.log(that.currentFunfactIndex);
-  },800);
+  },300);
 
   $(".slider-item:nth-child(" + panelIndex + ")").addClass("is-active");
   $(".slider-item:nth-child(" + this.currentFunfactIndex + ")").removeClass("is-active");
