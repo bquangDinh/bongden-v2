@@ -1,4 +1,4 @@
-$(".picture-detail-panel").on('click',function(e){
+$(".picture-info").on('click',function(e){
   $(this).toggleClass("is-open");
 });
 
@@ -44,8 +44,7 @@ slideFunfact.prototype.slide = function(panelIndex){
   setTimeout(function(){
     $(that.funfactPanelID + that.currentFunfactIndex).removeClass("is-active");
     that.currentFunfactIndex = panelIndex;
-    console.log(that.currentFunfactIndex);
-  },800);
+  },300);
 
   $(".slider-item:nth-child(" + panelIndex + ")").addClass("is-active");
   $(".slider-item:nth-child(" + this.currentFunfactIndex + ")").removeClass("is-active");
@@ -72,3 +71,5 @@ $(".slider-item").on('click',function(e){
 
   slider.slide(panelIndex);
 });
+
+new WOW().init();

@@ -14,19 +14,29 @@
 }
 
 body,html{
-  box-sizing: border-box;
-  overflow-x: hidden;
+	border: 0px;
+	margin: 0px;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+button,input[type='button'],input[type='submit']{
+  cursor: pointer;
+  border:0;
+}
+
+button:focus,input:focus,textarea:focus{
+	outline: 0 !important;
 }
 
 button{
-  cursor: pointer;
-  border:0;
-  background-color: transparent;
+	background: none;
+	border: none;
 }
 
 .page-wrapper{
-  overflow: hidden;
-  height: auto;
+	overflow-x: hidden;
+	height: auto;
 }
 
 .hamburger{
