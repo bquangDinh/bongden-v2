@@ -35,13 +35,13 @@
         <nav class="navbar-mobile">
           <ul class="navbar-mobile__list list-unstyled">
             <li>
-              <a href="#">TRANG CHỦ</a>
+              <a href="/">TRANG CHỦ</a>
             </li>
             <li>
-              <a href="#">CHÚNG MÌNH</a>
+              <a href="/about_us">CHÚNG MÌNH</a>
             </li>
             <li>
-              <a href="#">BÀI VIẾT</a>
+              <a href="/articles">BÀI VIẾT</a>
             </li>
             <li>
               <a href="#">ẢNH</a>
@@ -58,13 +58,13 @@
         <nav class="navbar navbar-expand-sm">
           <ul class="navbar-nav" style="margin-left:20px;">
             <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">TRANG CHỦ</a>
+              <a href="/" class="nav-link nav-btt">TRANG CHỦ</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">CHÚNG MÌNH</a>
+              <a href="/about_us" class="nav-link nav-btt">CHÚNG MÌNH</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">BÀI VIẾT</a>
+              <a href="/articles" class="nav-link nav-btt">BÀI VIẾT</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link nav-btt">VONFRAM LAB</a>

@@ -89,18 +89,18 @@
 <div class="event-container">
   <div class="event-grid-layout">
     <div class="event-name">
-      <div class="name">
+      <div class="name animated fadeIn slow wow delay-1s">
         SCIENCE FAIR
       </div>
     </div>
-    <div class="event-1st-image">
+    <div class="event-1st-image animated fadeIn wow">
       <img src="https://1p9lux1bgltk3pgfdt2f69ds-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/15836824_web1_Science_Fair_5.jpg">
     </div>
-    <div class="event-2th-image">
+    <div class="event-2th-image animated slideInLeft wow slow">
       <img src="https://i.ytimg.com/vi/xqQCckZhSww/maxresdefault.jpg">
     </div>
     <div class="event-description">
-      <div class="description">
+      <div class="description animated zoomIn delay-1s wow">
 
 A device that uses the resonance principle of Korean bells to harvest pressure energy and reduce pressure in high-speed railway tunnels by using pressure waves generated in the tunnel.
 
@@ -120,13 +120,31 @@ A device that uses the resonance principle of Korean bells to harvest pressure e
 
 <hr />
 
-<div class="media-container">
-  <video class="video" controls>
-    <source src="{{ URL::asset('sources/videos/test.mp4') }}" type="video/mp4">
+<div class="vid-info">
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <div class="vid-title d-flex justify-content-center align-items-center">
+        <div class="wow animated slideInLeft">
+          Earth's Day
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <div class="vid-description wow animated slideInRight delay-1s">
+        The height of counterculture in the United States, 1970 brought the death of Jimi Hendrix, the last Beatles album, and Simon & Garfunkel’s “Bridge Over Troubled Water.” War raged in Vietnam and students nationwide overwhelmingly opposed it.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="vid-month-container d-flex justify-content-center">
+  <video src="{{ URL::asset('sources/videos/test.mp4') }}" width="90%" controls style="background-color: black" class="wow animated slideInLeft slow">
+
   </video>
 </div>
 @endsection
 
 @section('js')
+<script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/trangchu.js') }}"></script>
 @endsection

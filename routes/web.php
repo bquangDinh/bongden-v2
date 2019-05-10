@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('trangchu');
 });
+
+Route::get('/about_us', function () {
+    return view('about_us');
+});
+
+Route::get('/articles', function () {
+    return view('article');
+});

@@ -71,3 +71,5 @@ $(".slider-item").on('click',function(e){
 
   slider.slide(panelIndex);
 });
+
+new WOW().init();
