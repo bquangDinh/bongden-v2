@@ -1,0 +1,6 @@
+.article-preview-cover{
+  width: 60px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 5px;
+}

@@ -5,146 +5,224 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="stylesheet" href="{{ URL::asset('css/vendor/slick.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/vendor/slick-theme.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('css/trangchu.css') }}">
 @endsection
 
 @section('main-content')
-<div class="first-panel">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-7 col-md-10">
-        <div class="left-side-panel">
-          <div class="slider-container ml-4">
-            <div>
-              <div class="slider-item" data-for-ff="1"></div>
-              <div class="slider-item is-active" data-for-ff="2"></div>
-              <div class="slider-item" data-for-ff="3"></div>
-            </div>
-          </div>
-          <div class="fun-fact-container animated" id="fun-fact-1">
-            <div class="fun-fact-title">
-              UNIVERSE
-            </div>
-            <div class="fun-fact-content">
-              "It will be an image of its silhouette sliding against the background glow of radiation of the heart of the Milky Way," he said. "That photograph will reveal the contours of a black hole for the first time."
-            </div>
-          </div>
-          <div class="fun-fact-container animated is-active" id="fun-fact-2">
-            <div class="fun-fact-title">
-              THE MOON
-            </div>
-            <div class="fun-fact-content">
-              "It will be an image of its silhouette sliding against the background glow of radiation of the heart of the Milky Way," he said. "That photograph will reveal the contours of a black hole for the first time."
-            </div>
-          </div>
-          <div class="fun-fact-container animated" id="fun-fact-3">
-            <div class="fun-fact-title">
-              THE SUN
-            </div>
-            <div class="fun-fact-content">
-              "It will be an image of its silhouette sliding against the background glow of radiation of the heart of the Milky Way," he said. "That photograph will reveal the contours of a black hole for the first time."
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 d-lg-block d-none">
-        <div class="m-picture-container">
-          <div class="m-picture__leftside">
-            <span>NO: 144</span>
-            <span>THE BEST PICTURE OF MONTH</span>
-          </div>
-          <div class="m-picture__rightside">
-            <img class="picture" src="https://media.wired.com/photos/5cadec1fb75f9b23c6466d74/master/pass/blackhole.jpg" alt="">
-            <div class="picture-info">
-              <div style="width: 100%;">
-                <div style="float: right;margin-right: 20px;margin-top: 10px;font-family: Roboto-Medium">NO. 144</div>
-                <div style="clear:right"></div>
-              </div>
-              <div class="picture-title">
-                BLACK HOLE
-              </div>
-              <div class="picture-description">
-                <p>
-                  The black hole itself – a cosmic trapdoor from which neither light nor matter can escape – is unseeable. But the latest observations take astronomers right to its threshold for the first time, illuminating the event horizon beyond which all known physical laws collapse.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-1 col-md-12">
-        <div class="sharing-container">
-          <button type="button" class="sharing-btn">
-            <i class="fab fa-facebook-square"></i>
-          </button>
-          <button type="button" class="sharing-btn">
-            <i class="fas fa-envelope"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="event-container">
-  <div class="event-grid-layout">
-    <div class="event-name">
-      <div class="name animated fadeIn slow wow delay-1s">
-        SCIENCE FAIR
-      </div>
-    </div>
-    <div class="event-1st-image animated fadeIn wow">
-      <img src="https://1p9lux1bgltk3pgfdt2f69ds-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/15836824_web1_Science_Fair_5.jpg">
-    </div>
-    <div class="event-2th-image animated slideInLeft wow slow">
-      <img src="https://i.ytimg.com/vi/xqQCckZhSww/maxresdefault.jpg">
-    </div>
-    <div class="event-description">
-      <div class="description animated zoomIn delay-1s wow">
-
-A device that uses the resonance principle of Korean bells to harvest pressure energy and reduce pressure in high-speed railway tunnels by using pressure waves generated in the tunnel.
-
-A device that uses the resonance principle of Korean bells to harvest pressure energy and reduce pressure in high-speed railway tunnels by using pressure waves generated in the tunnel
-
-A device that uses the resonance principle of Korean bells to harvest pressure energy and reduce pressure in high-speed railway tunnels by using pressure waves generated in the tunnel
-      </div>
-      <div style="width: 100%;position: absolute;left: 0;right: 0;bottom: 15px;" class="d-flex justify-content-center">
-        <button class="read-more-btn">READ MORE</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="event-controller">
-
-</div>
-
-<hr />
-
-<div class="vid-info">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-5 col-sm-12">
-      <div class="vid-title d-flex justify-content-center align-items-center">
-        <div class="wow animated slideInLeft">
-          Earth's Day
+    <div class="col-1">
+
+    </div>
+    <div class="col-10">
+      <div class="newest-article-container shadow-hover">
+        <div class="row">
+          <div class="col-md-7 col-sm-12">
+            <div style="height: 350px;width:100%;" class="d-flex justify-content-center align-items-center">
+              <div class="article-cover">
+                <img src="https://wallpapershome.com/images/pages/ico_h/20035.jpg">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-12">
+            <div class="article-info">
+              <div class="article-title">
+                Black Hole
+              </div>
+              <div class="article-description">
+                Google is helping U.S.bussiness reach their customers. Learn more in our 2018 Economic Impact Report
+              </div>
+              <div class="article-author">
+                Bui Quang Dinh
+              </div>
+              <div class="article-uploading-time">
+                1 hour ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="top-articles-container">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+            <div class="top-article">
+              <div class="article-cover">
+                <img class="shadow-hover" src="http://batterupbeauty.com/wp-content/uploads/art-wallpaper-illustration-wallpaper-hd-art-4k-wallpapers-for-desktop-and-mobile.jpg">
+              </div>
+              <div class="article-title">
+                Senja: Premium Icon for Every Needs
+              </div>
+              <div class="article-reaction">
+                <div class="row">
+                  <div class="col-4">
+                    <div class="reaction">
+                      <div>
+                        10k <i class="fas fa-comment-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="reaction">
+                      <div>
+                        10k <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="read-more-btn shadow-hover">Read</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="top-article">
+              <div class="article-cover">
+                <img class="shadow-hover" src="http://batterupbeauty.com/wp-content/uploads/art-wallpaper-illustration-wallpaper-hd-art-4k-wallpapers-for-desktop-and-mobile.jpg">
+              </div>
+              <div class="article-title">
+                Senja: Premium Icon for Every Needs
+              </div>
+              <div class="article-reaction">
+                <div class="row">
+                  <div class="col-4">
+                    <div class="reaction">
+                      <div>
+                        10k <i class="fas fa-comment-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="reaction">
+                      <div>
+                        10k <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="read-more-btn shadow-hover">Read</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="top-article">
+              <div class="article-cover">
+                <img class="shadow-hover" src="http://batterupbeauty.com/wp-content/uploads/art-wallpaper-illustration-wallpaper-hd-art-4k-wallpapers-for-desktop-and-mobile.jpg">
+              </div>
+              <div class="article-title">
+                Senja: Premium Icon for Every Needs
+              </div>
+              <div class="article-reaction">
+                <div class="row">
+                  <div class="col-4">
+                    <div class="reaction">
+                      <div>
+                        10k <i class="fas fa-comment-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="reaction">
+                      <div>
+                        10k <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="read-more-btn shadow-hover">Read</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="article-list-container">
+        <div class="search-field">
+          <div class="row">
+            <div class="col-md-12">
+              <input placeholder="Tim kiem bai viet" id="search-field-input" type="text" class="shadow-hover">
+            </div>
+          </div>
+        </div>
+
+        <div class="article-list">
+          <div class="article shadow-hover">
+            <div class="row">
+              <div class="col-md-9 col-sm-8">
+                <div style="height: 100px; width: 100%;position: relative">
+                  <div class="article-title">
+                    Larissa: Awesome Work Illustrations
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="article-cover">
+                  <img src="https://wallpaperplay.com/walls/full/a/c/a/53281.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="article shadow-hover">
+            <div class="row">
+              <div class="col-md-9 col-sm-8">
+                <div style="height: 100px; width: 100%;position: relative">
+                  <div class="article-title">
+                    Larissa: Awesome Work Illustrations
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="article-cover">
+                  <img src="https://wallpaperplay.com/walls/full/a/c/a/53281.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="article shadow-hover">
+            <div class="row">
+              <div class="col-md-9 col-sm-8">
+                <div style="height: 100px; width: 100%;position: relative">
+                  <div class="article-title">
+                    Larissa: Awesome Work Illustrations
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="article-cover">
+                  <img src="https://wallpaperplay.com/walls/full/a/c/a/53281.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-7 col-sm-12">
-      <div class="vid-description wow animated slideInRight delay-1s">
-        The height of counterculture in the United States, 1970 brought the death of Jimi Hendrix, the last Beatles album, and Simon & Garfunkel’s “Bridge Over Troubled Water.” War raged in Vietnam and students nationwide overwhelmingly opposed it.
-      </div>
+    <div class="col-1">
+
     </div>
   </div>
-</div>
-
-<div class="vid-month-container d-flex justify-content-center">
-  <video src="{{ URL::asset('sources/videos/test.mp4') }}" width="90%" controls style="background-color: black" class="wow animated slideInLeft slow">
-
-  </video>
 </div>
 @endsection
 
 @section('js')
 <script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/vendor/slick.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/trangchu.js') }}"></script>
 @endsection
