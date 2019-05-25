@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function permissions(){
-      return $this->hasMany('App\Permission');
+      return $this->hasMany('App\UserPermission');
     }
 }

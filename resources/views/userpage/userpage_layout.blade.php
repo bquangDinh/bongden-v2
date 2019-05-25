@@ -17,6 +17,8 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ URL::asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ URL::asset('css/vendor/sweetalert2.min.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('css/userpage/user_layout.css') }}">
   @yield('css')
 
 </head>
@@ -64,7 +66,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bài viết:</h6>
-            <a class="collapse-item" href="/user/article/new" style="background-color: #2ecc71;color: white">Tạo bài viết</a>
+            <a class="collapse-item permission-disable-item" href="/user/article/new" style="background-color: #2ecc71;color: white">Tạo bài viết</a>
             <a class="collapse-item" href="/user/article/list">Bài viết của tôi</a>
             <a class="collapse-item" href="/user/article/rules">Quy định viết bài</a>
           </div>
@@ -388,6 +390,8 @@
 
   <!-- Custom scripts for all pages-->
   <script src="{{ URL::asset('js/sb-admin-2.min.js') }}"></script>
+  <script type="text/javascript" src="{{ URL::asset('js/userpage/user_layout.js') }}"></script>
+  <script type="text/javascript" src="{{ URL::asset('js/vendor/sweetalert2.min.js') }}"></script>
   @yield('js')
 </body>
 
