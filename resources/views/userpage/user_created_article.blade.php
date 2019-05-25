@@ -6,7 +6,6 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ URL::asset('css/userpage/created_article.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/sweetalert2.min.css') }}">
 @endsection
 
 @section('main-content')
@@ -57,6 +56,5 @@
 @endsection
 
 @section('js')
-<script type="text/javascript" src="{{ URL::asset('js/vendor/sweetalert2.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/userpage/created_article.js') }}"></script>
 @endsection

@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Services\ArticleService;
+use App\Http\Services\PermissionService;
 use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
     public function index(){
+      if(PermissionService::isThisUserHavePermission("write article") == false){
+        return view('userpage.user_blank')->with('error','Bạn không đủ quyền để thực hiện tính năng này');
+      }
+
       return view('userpage.user_creating_article');
     }
 
@@ -18,6 +23,10 @@ class ArticleController extends Controller
     }
 
     public function create(ArticleRequest $request){
+      if(PermissionService::isThisUserHavePermission("write article") == false){
+        return view('userpage.user_blank')->with('error','Bạn không đủ quyền để thực hiện tính năng này');
+      }
+
       $err = ArticleService::create($request);
 
       if($err == -1){

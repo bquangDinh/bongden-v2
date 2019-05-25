@@ -35,7 +35,7 @@ class BongdenRegisterController extends Controller
       $basic_permission_id = Permission::where('name','=','write article')->first()->id;
       $user_permission->permission_id = $basic_permission_id;
       $user_permission->save();
-      
+
       Auth::login($user);
       return redirect('/user');
     }

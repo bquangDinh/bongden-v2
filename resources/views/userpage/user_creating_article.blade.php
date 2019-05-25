@@ -7,7 +7,6 @@
 @section('css')
 <link rel="stylesheet" href="{{ URL::asset('css/userpage/creating_article.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('css/vendor/select2.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/sweetalert2.min.css') }}">
 <!-- FroalaEditor -->
 <link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/froala_editor.pkgd.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/char_counter.min.css') }}">
@@ -127,7 +126,6 @@
 <script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/file.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/table.min.js') }}"></script>
 
-<script type="text/javascript" src="{{ URL::asset('js/vendor/sweetalert2.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/vendor/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/userpage/creating_article.js') }}"></script>
 @endsection
