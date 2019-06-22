@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
+Bóng Đèn
 @endsection
 
 @section('css')
@@ -11,217 +12,96 @@
 @endsection
 
 @section('main-content')
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-1">
 
-    </div>
-    <div class="col-10">
-      <div class="newest-article-container shadow-hover">
-        <div class="row">
-          <div class="col-md-7 col-sm-12">
-            <div style="height: 350px;width:100%;" class="d-flex justify-content-center align-items-center">
-              <div class="article-cover">
-                <img src="https://wallpapershome.com/images/pages/ico_h/20035.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-sm-12">
-            <div class="article-info">
-              <div class="article-title">
-                Black Hole
-              </div>
-              <div class="article-description">
-                Google is helping U.S.bussiness reach their customers. Learn more in our 2018 Economic Impact Report
-              </div>
-              <div class="article-author">
-                Bui Quang Dinh
-              </div>
-              <div class="article-uploading-time">
-                1 hour ago
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="triangle-layer d-lg-block d-none" id="particles-js">
+  <div class="lowerside">
 
-      <br />
-
-      <div class="top-articles-container">
-        <div class="row">
-          <div class="col-md-4 col-sm-12">
-            <div class="top-article">
-              <div class="article-cover">
-                <img class="shadow-hover" src="http://batterupbeauty.com/wp-content/uploads/art-wallpaper-illustration-wallpaper-hd-art-4k-wallpapers-for-desktop-and-mobile.jpg">
-              </div>
-              <div class="article-title">
-                Senja: Premium Icon for Every Needs
-              </div>
-              <div class="article-reaction">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="reaction">
-                      <div>
-                        10k <i class="fas fa-comment-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="reaction">
-                      <div>
-                        10k <i class="fas fa-heart"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <button type="button" class="read-more-btn shadow-hover">Read</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <div class="top-article">
-              <div class="article-cover">
-                <img class="shadow-hover" src="http://batterupbeauty.com/wp-content/uploads/art-wallpaper-illustration-wallpaper-hd-art-4k-wallpapers-for-desktop-and-mobile.jpg">
-              </div>
-              <div class="article-title">
-                Senja: Premium Icon for Every Needs
-              </div>
-              <div class="article-reaction">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="reaction">
-                      <div>
-                        10k <i class="fas fa-comment-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="reaction">
-                      <div>
-                        10k <i class="fas fa-heart"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <button type="button" class="read-more-btn shadow-hover">Read</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <div class="top-article">
-              <div class="article-cover">
-                <img class="shadow-hover" src="http://batterupbeauty.com/wp-content/uploads/art-wallpaper-illustration-wallpaper-hd-art-4k-wallpapers-for-desktop-and-mobile.jpg">
-              </div>
-              <div class="article-title">
-                Senja: Premium Icon for Every Needs
-              </div>
-              <div class="article-reaction">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="reaction">
-                      <div>
-                        10k <i class="fas fa-comment-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="reaction">
-                      <div>
-                        10k <i class="fas fa-heart"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <button type="button" class="read-more-btn shadow-hover">Read</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="article-list-container">
-        <div class="search-field">
+  </div>
+</div>
+<div class="main">
+  <div class="main__section">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 col-sm-11">
           <div class="row">
-            <div class="col-md-12">
-              <input placeholder="Tim kiem bai viet" id="search-field-input" type="text" class="shadow-hover">
-            </div>
-          </div>
-        </div>
-
-        <div class="article-list">
-          <div class="article shadow-hover">
-            <div class="row">
-              <div class="col-md-9 col-sm-8">
-                <div style="height: 100px; width: 100%;position: relative">
-                  <div class="article-title">
-                    Larissa: Awesome Work Illustrations
+            <div class="col-12">
+              <div class="lastest-article">
+                <div class="row">
+                  <div class="col-lg-7 col-md-12">
+                    <div class="cover">
+                      <img src="{{ $lastest_article->cover_url }}">
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4">
-                <div class="article-cover">
-                  <img src="https://wallpaperplay.com/walls/full/a/c/a/53281.jpg">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <hr />
-
-          <div class="article shadow-hover">
-            <div class="row">
-              <div class="col-md-9 col-sm-8">
-                <div style="height: 100px; width: 100%;position: relative">
-                  <div class="article-title">
-                    Larissa: Awesome Work Illustrations
+                  <div class="col-lg-5 col-md-12">
+                    <div class="article-info">
+                      <a class="subject text-center">
+                        {{ $lastest_article->subject->name }}
+                      </a>
+                      <div class="info">
+                        <div class="title">
+                          <p>{{ $lastest_article->title }}</p>
+                        </div>
+                        <div class="author">
+                          <img class="avatar" src="{{ $lastest_article->user->avatar_path }}">
+                          <div class="name">
+                            {{ $lastest_article->user->name }}
+                          </div>
+                        </div>
+                        <div class="description">
+                          {{ substr($lastest_article->content,0,150).'...' }}
+                        </div>
+                      </div>
+                      <div class="read-more-section">
+                        <button type="button">Đọc</button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4">
-                <div class="article-cover">
-                  <img src="https://wallpaperplay.com/walls/full/a/c/a/53281.jpg">
                 </div>
               </div>
             </div>
           </div>
-
-          <hr />
-
-          <div class="article shadow-hover">
-            <div class="row">
-              <div class="col-md-9 col-sm-8">
-                <div style="height: 100px; width: 100%;position: relative">
-                  <div class="article-title">
-                    Larissa: Awesome Work Illustrations
+          <br />
+          <div class="row">
+            @foreach($articles as $article)
+            <div class="col-md-4 col-sm-12">
+              <div class="article">
+                <img class="cover" src="{{ $article->cover_url }}">
+                <div class="article-info">
+                  <a class="subject text-center">
+                    {{ $article->subject->name }}
+                  </a>
+                  <div class="info">
+                    <div class="title">
+                      <p>{{ $article->title }}</p>
+                    </div>
+                    <div class="author">
+                      <img class="avatar" src="{{ $article->user->avatar_path }}">
+                      <div class="name">
+                        {{ $article->user->name }}
+                      </div>
+                    </div>
+                    <div class="description">
+                      {{ substr($article->content,0,90)."..." }}
+                    </div>
+                  </div>
+                  <div class="read-more-section">
+                    <button type="button">Đọc</button>
                   </div>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-4">
-                <div class="article-cover">
-                  <img src="https://wallpaperplay.com/walls/full/a/c/a/53281.jpg">
-                </div>
-              </div>
             </div>
+            @endforeach
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-1">
-
     </div>
   </div>
 </div>
+<button type="button" id="see-more-btn" onclick="window.location.href = '/article'">Xem thêm</button>
 @endsection
 
 @section('js')
+<script type="text/javascript" src="{{ URL::asset('js/vendor/particles.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/vendor/slick.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/trangchu.js') }}"></script>

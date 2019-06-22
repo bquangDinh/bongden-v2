@@ -5,6 +5,29 @@ $(document).ready(function(){
     }
   });
 
+  $(".open-article-preview").on('click',function(e){
+    let article_id = $(this).data("article-id");
+
+    $.ajax({
+      type:'GET',
+      url:'/user/article/review/' + article_id,
+      success:function(data){
+        if(data){
+          $("#loading").hide();
+          $("#article-title").html(data.title);
+          $("#article-cover__image").attr("src",data.cover_url);
+          $("#article-type-link").html(data.subject.name);
+          $("#article-content").html(data.content);
+          $(".article-cover-container").fadeIn(500);
+          $(".article-main-content").fadeIn(500);
+        }
+      },
+      error:function(jqXHR,exception){
+        console.log(jqXHR.responseText);
+      }
+    });
+  });
+
   $(".delete-article-btn").on('click',function(e){
     var article_id = $(this).data("article-id");
     var tr = $(this).parent().parent();
@@ -60,4 +83,6 @@ $(document).ready(function(){
       }
     });
   });
+
+  $(".open-article-preview").animatedModal();
 });

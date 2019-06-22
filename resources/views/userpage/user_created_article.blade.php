@@ -15,6 +15,7 @@
     <li class="breadcrumb-item active" aria-current="page">Bài viết của tôi</li>
   </ol>
 </nav>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -30,11 +31,16 @@
     @foreach($articles as $key=>$article)
     <tr>
       <th scope="row">{{ $key }}</th>
-      <th>{{ $article->title }}</th>
+      <th>
+        <a href="#animatedModal" class="open-article-preview" data-article-id=" {{ $article->id }} ">
+          {{ $article->title }}
+        </a>
+      </th>
       <th>
         <img src="{{ $article->cover_url }}" class="article-preview-cover">
       </th>
       <th>{{ $article->subject->name }}</th>
+      @if(isset($article->getState))
       @if($article->getState->state == "upload")
       <th style="color: #fdcb6e">Đợi phê duyệt</th>
       @elseif($article->getState->state == "save")
@@ -46,6 +52,9 @@
       @else
       <th style="color: #2ecc71">Đã đăng</th>
       @endif
+      @else
+      <th>{{ $article->id }}</th>
+      @endif
       <th>
         <button type="button" class="btn btn-outline-danger delete-article-btn" data-article-id="{{ $article->id }}">Xóa</button>
       </th>
@@ -53,6 +62,52 @@
     @endforeach
   </tbody>
 </table>
+
+@if(sizeof($articles) > 0)
+<div id="animatedModal">
+  <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+  <button class="close-animatedModal">
+    <i class="fas fa-times"></i>
+  </button>
+
+  <div class="modal-content">
+    <div class="lds-grid" id="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div>
+      <div class="article-cover-container" style="display: none">
+        <div class="article-cover">
+          <img id="article-cover__image" src="http://batterupbeauty.com/wp-content/uploads/illustration-wallpaper-hd-art-4k-wallpapers-for-desktop-and-mobile-art-wallpaper.jpg">
+        </div>
+        <div class="article-lowerside d-none d-lg-block">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid article-main-content" style="display: none">
+      <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8">
+          <div id="article-title">
+
+          </div>
+          <div class="article-type d-flex justify-content-center mt-4">
+            <a href="#" id="article-type-link"></a>
+          </div>
+          <div id="article-content" class="mt-5">
+
+          </div>
+        </div>
+        <div class="col-2">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+
 @endsection
 
 @section('js')

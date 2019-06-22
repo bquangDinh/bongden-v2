@@ -17,6 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ URL::asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
   <link rel="stylesheet" href="{{ URL::asset('css/vendor/sweetalert2.min.css') }}">
   <link rel="stylesheet" href="{{ URL::asset('css/userpage/user_layout.css') }}">
   @yield('css')
@@ -32,7 +33,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-lightbulb"></i>
         </div>
@@ -66,7 +67,11 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Bài viết:</h6>
-            <a class="collapse-item permission-disable-item" href="/user/article/new" style="background-color: #2ecc71;color: white">Tạo bài viết</a>
+            @if(\App\Http\Services\PermissionService::isThisUserHavePermission("write_article"))
+            <a class="collapse-item" href="/user/article/new" style="background-color: #2ecc71;color: white">Tạo bài viết</a>
+            @else
+            <a class="collapse-item permission-disable-item" href="/user/article/new" style="background-color: #e74c3c;color: white;">Tạo bài viết</a>
+            @endif
             <a class="collapse-item" href="/user/article/list">Bài viết của tôi</a>
             <a class="collapse-item" href="/user/article/rules">Quy định viết bài</a>
           </div>
@@ -94,43 +99,26 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Addons
+        Phụ trợ
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
+      @php
+      $permissions = \App\Http\Services\PermissionService::getAllAvailablePermissions();
+      @endphp
 
-      <!-- Nav Item - Charts -->
+      @foreach($permissions as $permission)
+      @if(\App\Http\Services\PermissionService::isThisUserHavePermission($permission->name))
+      @if($permission->name != "write_article")
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+        <a class="nav-link" href="/user/special_action/{{ $permission->name }}">
+          <i class="fas fa-lock"></i>
+          <span>
+            {{ $permission->description }}
+          </span></a>
       </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
-
+      @endif
+      @endif
+      @endforeach
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -392,6 +380,7 @@
   <script src="{{ URL::asset('js/sb-admin-2.min.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('js/userpage/user_layout.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('js/vendor/sweetalert2.min.js') }}"></script>
+  <script type="text/javascript" src="{{ URL::asset('js/vendor/animatedModal.min.js') }}"></script>
   @yield('js')
 </body>
 

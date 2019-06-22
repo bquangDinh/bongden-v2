@@ -61,4 +61,35 @@ class ArticleService{
       $article = DeletedArticle::where('article_id',$article_id)->first();
       return $article->reason;
     }
+
+    public static function approveArticleByID($article_id){
+      $article_state = ArticleState::where('article_id',$article_id)->first();
+      if($article_state){
+        $article_state->state = "uploaded";
+        $article_state->save();
+      }
+    }
+
+    public static function getArticleByID($article_id){
+      $article = Article::find($article_id);
+      $subject_name = $article->subject->name;
+      $article->subject = $subject_name;
+      return $article;
+    }
+
+    public static function adminDeleteArticleByID($article_id,$reason){
+      $article_state = ArticleState::where('article_id',$article_id)->first();
+
+      if($article_state){
+        $article_state->state = "delete";
+        $article_state->save();
+      }
+
+      $delete_article = new DeletedArticle;
+      $delete_article->article_id = $article_id;
+      $delete_article->reason = $reason;
+      $delete_article->save();
+
+      return 0;
+    }
 }

@@ -8,11 +8,12 @@
 
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="{{ URL::asset('css/layouts/main.css') }}">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::asset('css/vendor/hamburgers.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{ URL::asset('css/vendor/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/layouts/main.css') }}">
     @yield('css')
   </head>
   <body>
@@ -46,9 +47,15 @@
             <li>
               <a href="#">ẢNH</a>
             </li>
+            @if(Auth::check())
             <li>
-              <a href="#">VONFRAM LAB</a>
+              <a href="/user">DASHBOARD</a>
             </li>
+            @else
+            <li>
+              <a href="/bongden_login">TÀI KHOẢN</a>
+            </li>
+            @endif
           </ul>
         </nav>
       </header>
@@ -64,7 +71,7 @@
               <a href="/about_us" class="nav-link nav-btt">Chúng mình</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">Vonfram Lab</a>
+              <a href="#" class="nav-link nav-btt cm">Vonfram Lab</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link nav-btt">Ảnh</a>
@@ -77,9 +84,13 @@
               </button>
             </li>
             <li class="nav-item">
-              <button type="button" class="nav-right-item">
+              @if(Auth::check())
+              <img src="{{ Auth::user()->avatar_path }}" id="user-avatar" data-usn="{{ Auth::user()->name }}">
+              @else
+              <button type="button" class="nav-right-item" onclick="window.location.href = '/bongden_login'">
                 <i class="far fa-user"></i>
               </button>
+              @endif
             </li>
           </ul>
         </nav>
@@ -103,6 +114,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/vendor/sweetalert2.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/layouts/main.js') }}"></script>
     @yield('js')
   </body>
