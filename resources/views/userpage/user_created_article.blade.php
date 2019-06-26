@@ -16,7 +16,7 @@
   </ol>
 </nav>
 
-<table class="table">
+<table class="table w-100 table-responsive" style="display:block;overflow:auto;max-height:450px">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -24,6 +24,7 @@
       <th scope="col"></th>
       <th scope="col">Thể loại</th>
       <th scope="col">Trạng thái</th>
+      <th scope="col"></th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -40,28 +41,32 @@
         <img src="{{ $article->cover_url }}" class="article-preview-cover">
       </th>
       <th>{{ $article->subject->name }}</th>
-      @if(isset($article->getState))
       @if($article->getState->state == "upload")
       <th style="color: #fdcb6e">Đợi phê duyệt</th>
       @elseif($article->getState->state == "save")
       <th>Bản nháp</th>
-      @elseif($article->getState->state == "deleted")
+      @elseif($article->getState->state == "delete")
       <th style="color: #e74c3c">
         <button type="button" class="btn btn-danger admin-deleted-btn" data-article-id="{{ $article->id }}">Đã xóa (Admin)</button>
       </th>
       @else
       <th style="color: #2ecc71">Đã đăng</th>
       @endif
-      @else
-      <th>{{ $article->id }}</th>
-      @endif
+
+      @if($article->getState->state != "uploaded")
       <th>
         <button type="button" class="btn btn-outline-danger delete-article-btn" data-article-id="{{ $article->id }}">Xóa</button>
+      </th>
+      @endif
+
+      <th>
+        <button type="button" class="btn btn-outline-success update-article-btn" onclick="window.location.href = '/user/article/view_ar/{{ $article->id }}'">Sửa</button>
       </th>
     </tr>
     @endforeach
   </tbody>
 </table>
+
 
 @if(sizeof($articles) > 0)
 <div id="animatedModal">

@@ -11,12 +11,10 @@ use App\Article;
 class ArticleController extends Controller
 {
     public function articles(){
-      $articles = Article::simplePaginate(6);
+      $articles = Article::with(['getState' => function($query){
+        $query->where('state','uploaded');
+      }])->orderBy('created_at','desc')->simplePaginate(6);
       return view('article')->with('articles',$articles);
-    }
-
-    public function new(){
-      return view('userpage.user_creating_article');
     }
 
     public function getArticleList(){
@@ -45,10 +43,6 @@ class ArticleController extends Controller
       return $reason;
     }
 
-    public function showrule(){
-      return view('userpage.user_writing_rules');
-    }
-
     public function approveArticleByID($article_id){
       ArticleService::approveArticleByID($article_id);
       return 0;
@@ -64,5 +58,13 @@ class ArticleController extends Controller
       $reason = $request->reason;
       ArticleService::adminDeleteArticleByID($article_id,$reason);
       return 0;
+    }
+
+    public function update(ArticleRequest $request){
+      $err = ArticleService::update($request);
+      if($err == -1){
+        return view('userpage.user_blank')->with('error','This article has been deleted !');
+      }
+      return view('userpage.user_blank')->with('success','Update Article succeed !');
     }
 }

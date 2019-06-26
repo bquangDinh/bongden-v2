@@ -22,14 +22,15 @@
       <!-- For mobile -->
       <header class="header-mobile d-block d-lg-none">
         <div class="header-mobile__bar">
-          <div class="container-fluid">
-            <div class="header-mobile-inner">
-              <button type="button" class="hamburger hamburger--spring js-hamburger">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner"></span>
-                </span>
-              </button>
-            </div>
+          <div class="bd-name">
+            <a href="/" style="text-decoration: none">BÓNG ĐÈN</a>
+          </div>
+          <div class="header-mobile-inner">
+            <button type="button" class="hamburger hamburger--spring js-hamburger">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
           </div>
         </div>
 
@@ -42,10 +43,7 @@
               <a href="/about_us">CHÚNG MÌNH</a>
             </li>
             <li>
-              <a href="/articles">BÀI VIẾT</a>
-            </li>
-            <li>
-              <a href="#">ẢNH</a>
+              <a href="/#" class="cm">VONFRAM LAB</a>
             </li>
             @if(Auth::check())
             <li>
@@ -73,9 +71,6 @@
             <li class="nav-item">
               <a href="#" class="nav-link nav-btt cm">Vonfram Lab</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link nav-btt">Ảnh</a>
-            </li>
           </ul>
           <ul class="navbar-nav ml-auto" style="margin-right:20px">
             <li class="nav-item">
@@ -96,19 +91,71 @@
         </nav>
       </aside>
 
-      <div id="search-field">
-        <input type="text" id="search-field__content" placeholder="Search anything ..." spellcheck="false"/>
+      <form id="search-field" method="POST" action="{{ route('search') }}" role="search">
+        {{ csrf_field() }}
+        <input type="text" id="search-field__content" name="query" placeholder="Tìm kiếm bài viết..." spellcheck="false"/>
         <button type="button" id="search-field-close-btn">
           <i class="fas fa-times"></i>
         </button>
-      </div>
+        <button type="submit" name="submit" style="visibility: hidden"></button>
+      </form>
 
       <div class="main-content">
         @yield('main-content')
       </div>
 
-      <footer>
+      <footer class="footer">
+        <div class="container-fluid">
+  			<div class="row">
+  				<div class="col-md-10 col-12">
+  					<div class="text-left footer-content">
+  						<div class="row">
+  							<div class="col-md-6 col-12">
+                  <div class="info-container d-flex justify-content-center align-items-center">
+                    <div>
+    									<div class="f-title">THÔNG TIN</div>
+    									<br>
+    									<div class="sub-title">
+                        <a href="/about_us" style="text-decoration: none; color: #8492a6;">
+                          Về chúng mình
+                        </a>
+                      </div>
+    								</div>
+                  </div>
+  							</div>
 
+  							<div class="col-md-6 col-12">
+                  <div class="info-container d-flex justify-content-center align-items-center">
+                    <div>
+    									<div class="f-title">LIÊN HỆ</div>
+
+    									<br>
+
+    									<div class="sub-title">Phan Nguyễn Hạnh Nhi</div>
+    									<div class="sub-title"><i class="far fa-envelope"></i> hanhnhi.phan@gmail.com</div>
+    									<div class="sub-title"><i class="fas fa-phone"></i> 0944 099 126</div>
+
+    									<br>
+
+    									<div class="sub-title">Nguyễn Phong Hinh</div>
+    									<div class="sub-title"><i class="far fa-envelope"></i> truonganparfum99@gmail.com</div>
+    									<div class="sub-title"><i class="fas fa-phone"></i> 0123 230 7270</div>
+
+    									<br>
+
+    									<div class="sub-title"><i class="far fa-envelope"></i> bongden.camp@gmail.com</div>
+    								</div>
+                  </div>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+
+  				<div class="col-md-2 col-12" id="contact-field" style="display: flex;justify-content: center;align-items: center">
+  					<a class="contact-item" id="contact-fb" href="https://www.facebook.com/bongdencamp/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  				</div>
+  			</div>
+  		</div>
       </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

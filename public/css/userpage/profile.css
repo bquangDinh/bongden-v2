@@ -1,0 +1,30 @@
+.avatar img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#update-avatar-btn{
+  height: 40px;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  background-color: #3498db;
+}
+
+.cp-name{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+.profile-component input{
+  height: 50px;
+  width: 100%;
+  border: 0;
+  font-size: 1.2em;
+  background-color: #F8F9FC;
+  border-bottom: 2px solid lightgray;
+}

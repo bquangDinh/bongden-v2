@@ -18,7 +18,11 @@ class BongdenLoginController extends Controller
     );
 
     if(Auth::attempt($userData)){
-      return redirect('/user');
+      if($request->has('previous')){
+        return redirect()->to($request->previous);
+      }
+
+      return redirect()->intended('/user');
     }else{
       return redirect()->to('/bongden_login?initform=login')->withErrors(array(
         'auth' => 'The user name or password is incorrect'

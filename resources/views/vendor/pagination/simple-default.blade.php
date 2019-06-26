@@ -1,6 +1,6 @@
 <style media="screen">
   .pagination{
-      margin-bottom: -100px;
+      margin-bottom: -20px;
   }
 
   .pagination li{
@@ -47,7 +47,7 @@
         @if ($paginator->hasMorePages())
             <li><a href="{{ $paginator->nextPageUrl() }}" rel="next" style="text-decoration: none">Xem thêm</a></li>
         @else
-            <li class="disabled" aria-disabled="true"><span>Xem thêm</span></li>
+            <li class="disabled" aria-disabled="true" style="text-decoration: none"><span>Xem thêm</span></li>
         @endif
     </ul>
 @endif

@@ -9,9 +9,10 @@ Hello
 @endsection
 
 @section('main-content')
+<input type="text" value="{{ $article->id }}" style="display: none" id="article_id">
 <div class="article-cover">
   <div class="article-cover__image">
-    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/be832922391491.58c25558f0fe7.gif">
+    <img src="{{ $article->cover_url }}">
   </div>
   <div class="article-cover__mask">
   </div>
@@ -26,96 +27,206 @@ Hello
     </div>
     <div class="col-8">
       <div class="article-title">
-        An Interview with Marion Damiens, Senior UX Researcher at BlaBlaCar
+        {{ $article->title }}
       </div>
 
       <div class="article-type d-flex justify-content-center mt-4">
-        <a href="#">Toan Hoc</a>
+        <a href="#">
+          {{ $article->subject->name }}
+        </a>
       </div>
 
       <div class="article-content mt-5">
-        How did you get into Research?
-
-When I was a student, I used to work for a marketing research company, helping them with recruiting participants and taking notes during focus groups and individual interviews. I was very fascinated by the job of the researcher.
-
-Once my study was done, I started as an intern and then as a permanent employee for another marketing research company. As we were only few employees, I had the chance to be involved very quickly on all different aspects of projects and starting to moderate my first one-to-one interviews and focus groups! This agency was working very closely with the subsidiary of the French retail network, SNCF, selling tickets and passes online, and I had the chance to run usability tests for them about a new sign-up flow on the app. This was the beginning of my romance with UX and user research.
-
-Then I worked at Axance, the pioneer UX agency in France, as a UX researcher. I had the chance to learn and experiment most of UX research methodologies in several years, working for instance with Disneyland Paris, Google, PayPal and many more.
-
-Finally I joined BlaBlaCar few months ago, with the willingness to work closer with product and design teams.
-What does your role entail as Senior User Researcher? What are your key goals?
-
-The first thing I worked on when I started at BlaBlacar was to build and manage a network of internal and external partners across our key markets (Russia, Brazil, Germany, Spain, Italy, France, Poland…) to deliver research on a wide range of products.
-
-Our key goal here was to be able to run research, mostly usability tests, every 2 weeks limiting both efforts and costs, so that the product & experience team get insights on their work as soon as they need it.
-
-On a daily basis, my role is to help product managers and designers identify appropriate research and design methodology that best align with project needs; and then to manage the research projects from the brief to the final analysis.
-
-What’s the structure of your team like?
-
-Our team is split into product management and User Experience, with the product management team organized around product lines and user experience team organized partially around product lines and partially around transversal expertise (Content & Research). Which means, I am working with all the product lines (Carpool – Insurance – Commuting – etc.) and their several topics, which makes my job even more rich and stimulating.
-
-Right now, I’m the only UX researcher on the team, hence the need to work with external agencies to help me on several aspects I can’t do remotely. For example, the recruitment of local participants, facilities and set-up, local moderation etc.
-What’s your process like for each new project?
-
-Let’s use global usability tests as an example here. It starts with a brief coming in from the product line: where the product manager and UX designer work explain the context, the goals to achieve and the decision to be made following the research.
-
-I then organize a kick-off to discuss the brief, target audience to interview, planning and involve all the project team on it to challenge.
-
-Once we agree on the ‘What’ and the ‘Why’, we work on the ‘How’: I take care of briefing the external agency on the project, moderation, facilities & set-up aspect and so on, while the UX designer works on the screens and prototype. On D-day, I make sure that the whole team can follow the sessions live and remotely, we usually spend the whole day watching the tests together and debriefing with the agency as we go along. Finally, I deliver a recap of the project and the insights we got to help the team in making decisions.
-How do you work with the design team?
-
-I would say I am constantly working hand-in-hand with UX designers. Our design studio, as we call it at BlaBlaCar, is composed of UX designers, a content strategist and a UX researcher.
+        {{ $article->content }}
       </div>
     </div>
     <div class="col-2">
 
     </div>
   </div>
+</div>
 
-  <div class="comment-container mt-5">
-    <div class="row">
-      <div class="col-md-2 d-none d-lg-block">
-
-      </div>
-      <div class="col-md-8 col-12">
-        <div class="user-comment-container">
-          <div class="row">
-            <div class="col-md-1 col-2">
-              <img src="https://www.logolynx.com/images/logolynx/03/039b004617d1ef43cf1769aae45d6ea2.png" class="user-logo">
+<div class="container-fluid mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-9">
+      <div class="comment-container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-11">
+            <div class="comment-count mt-5">
+              {{ count($article->comments) }} comments
             </div>
-            <div class="col-md-11 col-10">
-              <div class="user-name">
-                Bui Quang Dinh
-              </div>
-              <textarea id="comment-box__input" class="comment-box__input shadow-hover mt-2" placeholder="Enter your comment"></textarea>
-              <div style="width: 100%;display:flex;justify-content: flex-end" class="mt-2">
-                <button id="send-comment-btn">send</button>
-              </div>
-            </div>
-          </div>
-        </div>
+            <div class="comments" id="comments">
+              @foreach($article->comments as $comment)
+              @if(!$comment->parent_id)
+              <div class="comment mt-2 mb-2" id="cm-{{ $comment->id }}">
+                <div class="comment-inner">
+                  <div class="row">
+                    <div class="col-md-4 col-8">
+                      <div class="writer">
+                        <img class="avatar" src="{{ $comment->user->avatar_path }}">
+                        <span class="name ml-2">{{ $comment->user->name }}
+                          @if($comment->article->user->id == $comment->user_id)
+                           <i class="fas fa-star" style="color: #FFB936"></i>
+                          @endif
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-4">
+                      <div class="date w-100">
+                        <span class="float-right">
+                          @php
+                          $now = new DateTime("now");
+                          $created_at = new DateTime($comment->created_at);
+                          $diff = $created_at->diff($now);
+                          $timeleft = "";
 
-        <hr>
+                          $h = $diff->format('%h');
+                          $m = $diff->format('%i');
 
-        <div class="user-commented-list">
-          <div class="user-comment-container">
-            <div class="row">
-              <div class="col-md-1 col-2">
-                <img src="https://www.logolynx.com/images/logolynx/03/039b004617d1ef43cf1769aae45d6ea2.png" class="user-logo">
-              </div>
-              <div class="col-md-11 col-10">
-                <div class="user-name">
-                  Bui Quang Dinh
+                          if($h){
+                            $timeleft = $timeleft.sprintf(ngettext('%d hour', '%d hours', $h), $h) . ' ';
+                          }else{
+                            if($m){
+                              $timeleft = $timeleft.sprintf(ngettext('%d minute', '%d minutes', $m), $m) . ' ';
+                            }
+                          }
+
+                          if($timeleft == ""){
+                            $timeleft = "1 minute";
+                          }
+
+                          $timeleft = $timeleft." ago";
+                          @endphp
+                          {{ $timeleft }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content mt-2 mb-2 ml-5">
+                    {{ $comment->content }}
+                  </div>
+                  <div class="action mt-2 mb-2 ml-5 w-100">
+                    <div class="row">
+                      <div class="col-lg-10">
+                        <button type="button" class="reply-btn" data-cm-id="{{ $comment->id }}">Reply</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <textarea class="comment-box__input shadow-hover mt-2" readonly></textarea>
+              </div>
+              <div class="replies w-100" id="cm-rl-{{ $comment->id }}">
+                <div class="list">
+                  @foreach($article->comments as $reply)
+                  @if($reply->parent_id)
+                  @if($reply->parent_id == $comment->id)
+                  <div class="reply">
+                    <div class="row">
+                      <div class="col-1 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-reply"></i>
+                      </div>
+                      <div class="col-11">
+                        <div class="comment mt-2 mb-2">
+                          <div class="comment-inner">
+                            <div class="row">
+                              <div class="col-md-4 col-8">
+                                <div class="writer">
+                                  <img class="avatar" src="{{ $reply->user->avatar_path }}">
+                                  <span class="name ml-2">{{ $reply->user->name }}
+                                    @if($reply->article->user->id == $reply->user_id)
+                                    <i class="fas fa-star" style="color: #FFB936"></i>
+                                    @endif
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="col-md-8 col-4">
+                                <div class="date w-100">
+                                  <span class="float-right">
+                                    @php
+                                    $now = new DateTime("now");
+                                    $created_at = new DateTime($reply->created_at);
+                                    $diff = $created_at->diff($now);
+                                    $timeleft = "";
+
+                                    $h = $diff->format('%h');
+                                    $m = $diff->format('%i');
+
+                                    if($h){
+                                      $timeleft = $timeleft.sprintf(ngettext('%d hour', '%d hours', $h), $h) . ' ';
+                                    }else{
+                                      if($m){
+                                        $timeleft = $timeleft.sprintf(ngettext('%d minute', '%d minutes', $m), $m) . ' ';
+                                      }
+                                    }
+
+                                    if($timeleft == ""){
+                                      $timeleft = "1 minute";
+                                    }
+
+                                    $timeleft = $timeleft." ago";
+                                    @endphp
+                                    {{ $timeleft }}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content mt-2 mb-2 ml-5">
+                              {{ $reply->content }}
+                            </div>
+                            <div class="action mt-2 mb-2 ml-5 w-100">
+                              <div class="row">
+                                <div class="col-lg-10">
+                                  <button type="button" class="reply-btn" data-cm-id='{{ $reply->parent->id }}'>Reply</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  @endif
+                  @endif
+                  @endforeach
+                </div>
+              </div>
+              @endif
+              @endforeach
+            </div>
+
+            @if(Auth::check())
+            <div class="user-reply" id="user_comment">
+              <div class="reply-block mt-2 mb-2">
+                <div class="comment-inner">
+                  <div class="row">
+                    <div class="col-md-4 col-8">
+                      <div class="writer">
+                        <img class="avatar" src="{{ Auth::user()->avatar_path }}">
+                        <span class="name ml-2">{{ Auth::user()->name }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2 mb-2 ml-4">
+                    <div class="col-11">
+                      <div class="reply-content">
+                        <input type="text" placeholder="Leave your comment" class="comment-ip-content" id="comment-ip-content">
+                      </div>
+                    </div>
+                    <div class="col-1 d-flex justify-content-center align-items-center">
+                      <button type="button" class="send-comment-btn">
+                        <i class="fas fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            @else
+            <div class="login-warning-container mt-2 mb-2">
+              <button type="button" onclick="window.location.href = '/bongden_login?previous=' + window.location.href">Login to Continue</button>
+            </div>
+            @endif
           </div>
         </div>
-      </div>
-      <div class="col-md-2 d-none d-lg-block">
-
       </div>
     </div>
   </div>
@@ -123,4 +234,6 @@ I would say I am constantly working hand-in-hand with UX designers. Our design s
 @endsection
 
 @section('js')
+<script type="text/javascript" src="{{ URL::asset('js/vendor/jquery.scrolline.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/reading.js') }}"></script>
 @endsection

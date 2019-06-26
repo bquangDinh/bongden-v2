@@ -28,16 +28,36 @@ class ArticleService{
         $tagIDs = TagService::addIfNotExist($request->tag);
 
         foreach($tagIDs as $tagid){
-          $article_tag = new ArticleTag;
-          $article_tag->article_id = $article->id;
-          $article_tag->tag_id = $tagid;
-          $article_tag->save();
+          TagService::add_article_tag($tagid,$article->id);
         }
       }catch(Exception $e){
         return -1;
       }
 
       return 0;
+    }
+
+    public static function update($request){
+      $article = Article::find($request->article_id);
+
+      if(!$article){
+        return -1;
+      }
+
+      $article->title = $request->title;
+      $article->cover_url = $request->cover;
+      $article->subject_id = $request->subject;
+      $article->content = $request->content;
+      $article->user_id = Auth::user()->id;
+      $article->save();
+
+      $article->getState()->update([
+        'state' => $request->submit
+      ]);
+
+      $tagIDs = TagService::addIfNotExist($request->tag);
+      TagService::update_article_tag($tagIDs,$article->id);
+
     }
 
     public static function getAllArticleOfUser(){

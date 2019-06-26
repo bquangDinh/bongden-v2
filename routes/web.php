@@ -17,15 +17,12 @@ Route::get('/article','ArticleController@articles');
 Route::get('/about_us', function () {
     return view('about_us');
 });
+Route::any('/search','MainController@search')->name('search');
 
-Route::get('/articles', function () {
-    return view('article');
-});
-
-Route::get('/reading', function () {
-    return view('reading');
-});
-
+Route::get('/reading/{article_id}','ReadingController@reading');
+Route::get('/ct-rpl/{comment_id}','ReadingController@create_reply_block');
+Route::post('/post-comment','ReadingController@create_comment');
+Route::post('/post-reply','ReadingController@create_reply');
 
 Route::get('bongden_login','BongdenLoginController@index')->name('bongden_login_show_form')->middleware('isloginbefore');
 Route::post('bongden_login','BongdenLoginController@login')->name('bongden_login');
@@ -34,6 +31,7 @@ Route::get('bongden_logout','AuthSession@destroy')->name('bongden_logout');
 
 Route::group(['prefix' => 'user','middleware' => 'checklogin'],function(){
   Route::get('/','UserController@index')->name('user_dashboard');
+  Route::get('/profile','UserController@profile');
 
   Route::get('action/get_tags_list','TagController@getTagsBySearching');
   Route::get('action/get_subjects','SubjectController@getAllSubjects');
@@ -47,12 +45,14 @@ Route::group(['prefix' => 'user','middleware' => 'checklogin'],function(){
   });
 
   Route::prefix('article')->group(function(){
-    Route::get('/new','ArticleController@new');
+    Route::get('/new','UserController@show_creating_article');
     Route::delete('/delete','ArticleController@delete');
+    Route::get('/view_ar/{article_id}','UserController@show_editing_article');
+    Route::post('/update_article','ArticleController@update')->name('update_article');
     Route::get('/admin_deleled_info/{article_id}','ArticleController@getAdminDeletedInfo');
     Route::get('/list','ArticleController@getArticleList');
     Route::post('/create','ArticleController@create')->name('create_article');
-    Route::get('/rules','ArticleController@showrule');
+    Route::get('/rules','UserController@showrule');
     Route::get('/review/{article_id}','ArticleController@getArticleByID');
   });
 });

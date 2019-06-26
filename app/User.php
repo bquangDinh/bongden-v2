@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function permissions(){
       return $this->hasMany('App\UserPermission');
     }
+
+    public function notifies(){
+      return $this->hasMany('App\Notify');
+    }
 }

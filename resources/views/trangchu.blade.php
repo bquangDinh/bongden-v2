@@ -52,7 +52,7 @@ Bóng Đèn
                         </div>
                       </div>
                       <div class="read-more-section">
-                        <button type="button">Đọc</button>
+                        <button type="button" onclick="window.location.href = '/reading/{{ $lastest_article->id }}'">Đọc</button>
                       </div>
                     </div>
                   </div>
@@ -81,11 +81,11 @@ Bóng Đèn
                       </div>
                     </div>
                     <div class="description">
-                      {{ substr($article->content,0,90)."..." }}
+                      {{ substr($article->content,0,70)."..." }}
                     </div>
                   </div>
                   <div class="read-more-section">
-                    <button type="button">Đọc</button>
+                    <button type="button" onclick="window.location.href = '/reading/{{ $article->id }}'">Đọc</button>
                   </div>
                 </div>
               </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Input;
 
 class ArticleRequest extends FormRequest
 {
@@ -24,8 +25,8 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|unique:article',
-            'cover' => 'required|string'
+            'title' => 'required|string|unique:article,title,'.Input::get('article_id').',id',
+            'cover' => 'required|string|url'
         ];
     }
 }

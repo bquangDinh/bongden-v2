@@ -11,6 +11,7 @@ $("#search-field-close-btn").on('click',function(){
   $("#search-field").removeClass("is-open");
 });
 
+
 $(".cm").on('click',function(){
   Swal.fire({
     title:'Comming Soon !',

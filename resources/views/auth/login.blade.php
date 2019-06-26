@@ -33,6 +33,11 @@
               </div>
               <form class="form" method="POST" action="{{ route('bongden_login') }}">
                 @csrf
+                @if(Request::has('previous'))
+                  <input type="text" name="previous" value="{{ Request::get('previous') }}" style="display: none">
+                @else
+                  <input type="text" name="previous" value="{{ URL::previous() }}" style="display: none">
+                @endif
                 @if ($errors->has('auth'))
                 <div class="error-message">
                   {{ $errors->first('auth') }}

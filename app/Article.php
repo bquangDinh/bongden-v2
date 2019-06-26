@@ -23,4 +23,8 @@ class Article extends Model
     public function tags(){
       return $this->hasMany('App\ArticleTag');
     }
+
+    public function comments(){
+      return $this->hasMany("App\Comment")->orderBy('created_at','asc');
+    }
 }
