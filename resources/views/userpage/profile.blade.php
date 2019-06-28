@@ -17,72 +17,69 @@
   </ol>
 </nav>
 
-<div class="row">
-  <div class="col-3" style="border-right: 1px solid lightgray">
-    <div class="avatar">
-      <img src="{{ Auth::user()->avatar_path }}">
-    </div>
-    <button type="button" id="update-avatar-btn" class="mt-2 w-100">Đổi ảnh đại diện</button>
+<div class="card mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">
+      {{ Auth::user()->name }}
+    </h6>
   </div>
-  <div class="col-9">
-    <div class="profile-component">
-      <div class="row">
-        <div class="col-2">
-          <div class="cp-name">
-            <div>
-              Họ Tên
-            </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
+        <div class="avatar d-flex justify-content-center align-items-center flex-column">
+          <div class="user-avatar-d" id="user-avatar" style="background-image: url('{{ Auth::user()->avatar_path }}')">
           </div>
-        </div>
-        <div class="col-8">
-          <input type="text" id="name-ip" value="{{ Auth::user()->name }}">
-        </div>
-        <div class="col-2">
-          <button type="button" id="update-name-btn" class="btn btn-success">
-            <span class="text">Cập nhật</span>
-          </button>
+          <button type="button" id="update-avatar-btn" class="btn btn-outline-primary mt-2">Đổi ảnh đại diện</button>
         </div>
       </div>
-    </div>
+      <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+        <div class="common-info d-flex justify-content-center align-items-start flex-column">
+          <h2 class="font-weight-bold" style="color: black;">{{ Auth::user()->name }}</h2>
+          <h4>{{ Auth::user()->email }}</h4>
+        </div>
 
-    <div class="profile-component mt-2">
-      <div class="row">
-        <div class="col-2">
-          <div class="cp-name">
-            <div>
-              Năm sinh
-            </div>
-          </div>
-        </div>
-        <div class="col-8">
-          <select id="year-select" data-year="{{ Auth::user()->yearOfbirth }}">
-            <option value="{{ Auth::user()->yearOfbirth }}" checked>{{ Auth::user()->yearOfbirth }}</option>
-          </select>
-        </div>
-        <div class="col-2">
-          <button type="button" id="update-name-btn" class="btn btn-success">
-            <span class="text">Cập nhật</span>
-          </button>
-        </div>
-      </div>
-    </div>
+        <form action="{{ route('update_profile') }}" method="post">
+          {{ csrf_field() }}
 
-    <div class="profile-component mt-2">
-      <div class="row">
-        <div class="col-2">
-          <div class="cp-name">
-            <div>
-              Năm sinh
-            </div>
+          <div class="form-group">
+            <label for="user-name">Họ Tên</label>
+            <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" id="user-name" placeholder="Enter name">
           </div>
-        </div>
-        <div class="col-8">
-        </div>
-        <div class="col-2">
-          <button type="button" id="update-name-btn" class="btn btn-success">
-            <span class="text">Cập nhật</span>
-          </button>
-        </div>
+
+          <div class="form-group">
+            <label for="user-email">Email</label>
+            <input type="text" name="email" value="{{ Auth::user()->email }}" class="form-control" id="user-email" placeholder="Enter email" readonly>
+          </div>
+
+          <div class="form-group">
+            <label for="user-birthyear">Năm sinh</label>
+            <select class="form-control" name="yearOfbirth" id="user-birthyear" data-year="{{ Auth::user()->yearOfbirth }}" data-dropup-auto="false">
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="user-gender">Giới tính</label>
+            <select class="form-control" name="sex" id="user-gender">
+              @if(Auth::user()->sex == "male")
+              <option value="male" selected>Male</option>
+              <option value="famale">Famale</option>
+              @else
+              <option value="male">Male</option>
+              <option value="famale" selected>Famale</option>
+              @endif
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="user-phone">Số điện thoại</label>
+            <input type="text" name="phone_number" value="{{ Auth::user()->phone_number }}" id="user-phone"  placeholder="Enter phone number" class="form-control">
+          </div>
+
+          <div class="w-100 d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-success">Cập nhật</button>
+          </div>
+        </form>
+
       </div>
     </div>
   </div>
@@ -90,6 +87,7 @@
 @endsection
 
 @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+<script type="text/javascript" src="{{ URL::asset('js/vendor/cleave.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/vendor/cleave-phone.vn.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/userpage/profile.js') }}"></script>
 @endsection

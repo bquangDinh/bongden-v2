@@ -80,6 +80,44 @@ $(document).ready(function(){
             $("#cover-input").val(url);
           }
         })();
+      }else{
+        const {value: file} = await Swal.fire({
+          title: 'Select image',
+          input:'file',
+          inputAttributes:{
+            'accept': 'image/*',
+            'aria-label': 'Upload your cover picture'
+          }
+        });
+
+        if(file){
+          let filesize = file.size/1024/1024;
+          let FILE_SIZE_LIMIT = 1; // 1MB;
+          if(filesize > FILE_SIZE_LIMIT){
+            Swal.fire({
+              type:'error',
+              title:'File ảnh quá lớn !!!',
+              text:'Vui lòng sử dụng ảnh có dung lượng dưới 1MB'
+            });
+          }else{
+            let data = new FormData();
+            data.append('cover',file);
+
+            let ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function(){
+              if(ajax.readyState === 4 && ajax.status === 200){
+                $("#article-cover-img").attr("src",ajax.responseText);
+                $("#cover-input").val(ajax.responseText);
+              }
+            }
+
+            let url = "/user/add_image";
+            ajax.open("post",url,true);
+            ajax.setRequestHeader('X-CSRF-TOKEN',$('meta[name="csrf-token"]').attr('content'));
+            ajax.send(data);
+          }
+        }
       }
     }
   }

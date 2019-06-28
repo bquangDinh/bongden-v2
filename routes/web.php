@@ -31,7 +31,17 @@ Route::get('bongden_logout','AuthSession@destroy')->name('bongden_logout');
 
 Route::group(['prefix' => 'user','middleware' => 'checklogin'],function(){
   Route::get('/','UserController@index')->name('user_dashboard');
-  Route::get('/profile','UserController@profile');
+  Route::post('/add_image','ImageController@add');
+  
+  Route::prefix('profile')->group(function(){
+    Route::get('/','UserController@profile');
+    Route::post('/update','UserController@update_profile')->name('update_profile');
+    Route::post('/update_avatar_w_url','UserController@update_avatar_with_url');
+    Route::post('/update_avatar_w_file','UserController@update_avatar_with_file');
+  });
+
+  Route::get('/se','UserController@changing_password_index');
+  Route::post('/change_password','UserController@change_password')->name('change_password');
 
   Route::get('action/get_tags_list','TagController@getTagsBySearching');
   Route::get('action/get_subjects','SubjectController@getAllSubjects');

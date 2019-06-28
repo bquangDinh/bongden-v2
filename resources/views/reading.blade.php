@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-Hello
+{{ $article->title }}
 @endsection
 
 @section('css')
@@ -26,9 +26,9 @@ Hello
 
     </div>
     <div class="col-8">
-      <div class="article-title">
+      <h1 class="article-title">
         {{ $article->title }}
-      </div>
+      </h1>
 
       <div class="article-type d-flex justify-content-center mt-4">
         <a href="#">

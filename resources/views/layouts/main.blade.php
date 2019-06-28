@@ -8,6 +8,26 @@
 
     <title>@yield('title')</title>
 
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ URL::asset('sources/icon/apple-touch-icon-57x57.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ URL::asset('sources/icon/apple-touch-icon-114x114.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ URL::asset('sources/icon/apple-touch-icon-72x72.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ URL::asset('sources/icon/apple-touch-icon-144x144.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ URL::asset('sources/icon/apple-touch-icon-60x60.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ URL::asset('sources/icon/apple-touch-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ URL::asset('sources/icon/apple-touch-icon-76x76.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ URL::asset('sources/icon/apple-touch-icon-152x152.png') }}" />
+    <link rel="icon" type="image/png" href="{{ URL::asset('sources/icon/favicon-196x196.png') }}" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{{ URL::asset('sources/icon/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{{ URL::asset('sources/icon/favicon-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ URL::asset('sources/icon/favicon-16x16.png') }}" sizes="16x16" />
+    <link rel="icon" type="image/png" href="{{ URL::asset('sources/icon/favicon-128.png') }}" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="{{ URL::asset('sources/icon/mstile-144x144.png') }}" />
+    <meta name="msapplication-square70x70logo" content="{{ URL::asset('sources/icon/mstile-70x70.png') }}" />
+    <meta name="msapplication-square150x150logo" content="{{ URL::asset('sources/icon/mstile-150x150.png') }}" />
+    <meta name="msapplication-wide310x150logo" content="{{ URL::asset('sources/icon/mstile-310x150.png') }}" />
+    <meta name="msapplication-square310x310logo" content="{{ URL::asset('sources/icon/mstile-310x310.png') }}" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::asset('css/vendor/hamburgers.css') }}">
