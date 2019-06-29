@@ -44,7 +44,6 @@
   width: 100%;
   background-color: white;
   border: 1px solid #EEF2F6;
-  margin-left: -30px;
   border-radius: 0px 15px 15px 0;
   position: relative;
 }
@@ -226,6 +225,16 @@
   right: 80px;
   top: 28%;
   font-size: 1.5em;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 @media only screen and (max-width: 1032px){

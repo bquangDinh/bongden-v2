@@ -26,7 +26,7 @@ Bóng Đèn
           <div class="row">
             <div class="col-12">
               <div class="lastest-article">
-                <div class="row">
+                <div class="row no-gutters">
                   <div class="col-lg-7 col-md-12">
                     <div class="cover">
                       <img src="{{ $lastest_article->cover_url }}">

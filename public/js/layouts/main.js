@@ -47,3 +47,11 @@ $("#user-avatar").on('click',function(e){
     }
   });
 });
+
+$(".dev").on('click',function(e){
+  Swal.fire({
+    type:'warning',
+    title:'Cảnh báo',
+    text:'Website Bóng Đèn đang trong quá trình phát triển, các thông tin trên website không phải là chính thức'
+  });
+});

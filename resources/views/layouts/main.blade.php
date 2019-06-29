@@ -91,6 +91,9 @@
             <li class="nav-item">
               <a href="#" class="nav-link nav-btt cm">Vonfram Lab</a>
             </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link nav-btt dev"><span class="badge badge-danger">Dev Mode</span></a>
+            </li>
           </ul>
           <ul class="navbar-nav ml-auto" style="margin-right:20px">
             <li class="nav-item">
@@ -131,13 +134,21 @@
   					<div class="text-left footer-content">
   						<div class="row">
   							<div class="col-md-6 col-12">
-                  <div class="info-container d-flex justify-content-center align-items-center">
+                  <div class="info-container d-flex justify-content-around align-items-center flex-column">
                     <div>
     									<div class="f-title">THÔNG TIN</div>
     									<br>
     									<div class="sub-title">
                         <a href="/about_us" style="text-decoration: none; color: #8492a6;">
                           Về chúng mình
+                        </a>
+                      </div>
+                      <br>
+                      <div class="f-title">BÁO CÁO</div>
+    									<br>
+    									<div class="sub-title">
+                        <a href="https://forms.gle/2DSQ7CsYSZd8VJ2e6" target="_blank" style="text-decoration: none; color: #8492a6;">
+                          Báo cáo lỗi
                         </a>
                       </div>
     								</div>
