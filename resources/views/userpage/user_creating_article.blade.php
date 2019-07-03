@@ -7,15 +7,7 @@
 @section('css')
 <link rel="stylesheet" href="{{ URL::asset('css/userpage/creating_article.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('css/vendor/select2.min.css') }}">
-<!-- FroalaEditor -->
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/froala_editor.pkgd.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/char_counter.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/code_view.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/colors.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/draggable.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/emoticons.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/file.min.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('css/vendor/froala_editor/table.min.css') }}">
+
 @endsection
 
 @section('main-content')
@@ -114,18 +106,7 @@
 @endsection
 
 @section('js')
-<!-- FroalaEditor -->
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/froala_editor.pkgd.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/char_counter.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/code_view.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/colors.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/draggable.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/edit_in_popup.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/emoticons.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/entities.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/file.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/vendor/froala_editor/table.min.js') }}"></script>
-
+<script src="https://cdn.tiny.cloud/1/j3z8kdc0di1465wji07upkwwuc7exvti07rixz2ewht51abv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript" src="{{ URL::asset('js/vendor/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/userpage/creating_article.js') }}"></script>
 @endsection
