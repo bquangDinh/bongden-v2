@@ -48,7 +48,10 @@ Bóng Đèn
                           </div>
                         </div>
                         <div class="description">
-                          {{ substr($lastest_article->content,0,150).'...' }}
+                          @php
+                          $html = new \Html2Text\Html2Text($lastest_article->content);
+                          @endphp
+                          {{ substr($html->getText(),0,150).'...' }}
                         </div>
                       </div>
                       <div class="read-more-section">
@@ -81,7 +84,10 @@ Bóng Đèn
                       </div>
                     </div>
                     <div class="description">
-                      {{ substr($article->content,0,70)."..." }}
+                      @php
+                      $html = new \Html2Text\Html2Text($article->content);
+                      @endphp
+                      {{ substr($html->getText(),0,70).'...' }}
                     </div>
                   </div>
                   <div class="read-more-section">

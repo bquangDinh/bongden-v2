@@ -37,7 +37,7 @@
       </div>
 
       <div class="article-content mt-5">
-        {{ $article->content }}
+        {!! $article->content !!}
       </div>
     </div>
     <div class="col-2">
