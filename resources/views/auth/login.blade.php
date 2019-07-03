@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
+Bóng Đèn
 @endsection
 
 @section('css')
