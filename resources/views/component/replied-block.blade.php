@@ -10,7 +10,7 @@
             <div class="col-md-4 col-8">
               <div class="writer">
                 <img class="avatar" src="{{ $reply->user->avatar_path }}">
-                <span class="name ml-2 d-none d-lg-block">{{ $reply->user->name }}
+                <span class="name ml-2 d-lg-inline d-none">{{ $reply->user->name }}
                   @if($reply->article->user->id == $reply->user_id)
                   <i class="fas fa-star" style="color: #FFB936"></i>
                   @endif

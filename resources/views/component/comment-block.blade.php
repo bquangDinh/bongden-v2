@@ -4,7 +4,7 @@
       <div class="col-md-4 col-8">
         <div class="writer">
           <img class="avatar" src="{{ $comment->user->avatar_path }}">
-          <span class="name ml-2 d-none d-lg-block">{{ $comment->user->name }}
+          <span class="name ml-2 d-lg-inline d-none">{{ $comment->user->name }}
             @if($comment->article->user->id == $comment->user_id)
              <i class="fas fa-star" style="color: #FFB936"></i>
             @endif

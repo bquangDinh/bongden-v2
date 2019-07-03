@@ -12,7 +12,7 @@
             <div class="col-md-4 col-8">
               <div class="writer">
                 <img class="avatar" src="{{ Auth::user()->avatar_path }}">
-                <span class="name ml-2 d-lg-block d-none">{{ Auth::user()->name }} <i class="fas fa-star" style="color: #FFB936"></i></span>
+                <span class="name ml-2 d-lg-inline d-none">{{ Auth::user()->name }} <i class="fas fa-star" style="color: #FFB936"></i></span>
               </div>
             </div>
           </div>
