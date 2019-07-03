@@ -38,7 +38,10 @@ Bài viết
                       </div>
                     </div>
                     <div class="description">
-                      {{ substr($article->content,0,90)."..." }}
+                      @php
+                      $html = new \Html2Text\Html2Text($article->content);
+                      @endphp
+                      {{ substr($html->getText(),0,90)."..." }}
                     </div>
                   </div>
                   <div class="read-more-section">
