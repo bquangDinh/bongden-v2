@@ -7,7 +7,6 @@
 @section('css')
 <link rel="stylesheet" href="{{ URL::asset('css/userpage/creating_article.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('css/vendor/select2.min.css') }}">
-
 @endsection
 
 @section('main-content')
