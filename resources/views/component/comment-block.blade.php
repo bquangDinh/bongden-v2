@@ -1,7 +1,7 @@
 <div class="comment mt-2 mb-2" id="cm-{{ $comment->id }}">
   <div class="comment-inner">
     <div class="row">
-      <div class="col-md-4 col-8">
+      <div class="col-md-4 col-4">
         <div class="writer">
           <img class="avatar" src="{{ $comment->user->avatar_path }}">
           <span class="name ml-2 d-lg-inline d-none">{{ $comment->user->name }}
@@ -11,7 +11,7 @@
           </span>
         </div>
       </div>
-      <div class="col-md-8 col-4">
+      <div class="col-md-8 col-8">
         <div class="date w-100">
           <span class="float-right">
             @php

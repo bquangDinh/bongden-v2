@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta content="science, camping, event, research, education">
+	  <meta name="description" content="Bóng Đèn là tổ chức khoa học dành cho học sinh cấp 2 với mục tiêu mang lại kiến thức khoa học theo cách thú vị và nhiều màu sắc hơn là những kiến thức khô khan trong sách giáo khoa. Còn đợi gì nữa mà không tham gia với tụi mình.">
     <title>@yield('title')</title>
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ URL::asset('sources/icon/apple-touch-icon-57x57.png') }}" />
@@ -35,6 +36,17 @@
     <link rel="stylesheet" href="{{ URL::asset('css/vendor/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/layouts/main.css') }}">
     @yield('css')
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143285274-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143285274-1');
+</script>
+
   </head>
   <body>
     <!-- NAVIGATION BAR-->

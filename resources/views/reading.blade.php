@@ -5,6 +5,12 @@
 @endsection
 
 @section('css')
+<!-- Open Graph data -->
+<meta property="og:title" content="{{$article->title}}" />
+<meta property="og:type" content="education, science topics, research" />
+<meta property="og:url" content="{{ URL::to('/').'/reading/'.$article->id }}" />
+<meta property="og:image" content="{{ $article->cover_url }}" />
+
 <link rel="stylesheet" href="{{ URL::asset('css/reading.css') }}">
 @endsection
 
@@ -45,7 +51,14 @@
     </div>
   </div>
 </div>
-
+<div class="w-100 d-flex justify-content-center mt-3 mb-3">
+  @php
+  $html = new \Html2Text\Html2Text($article->content);
+  @endphp
+  <button type="button" id="share-fb-btn" class="fb-share-button" data-href="{{ URL::to('/').'/reading/'.$article->id }}" data-image="{{ $article->cover_url }}" data-title="{{ $article->title }}" data-desc="{{ substr($html->getText(),0,150).'...' }}">
+    <i class="fab fa-facebook"></i>
+  </button>
+</div>
 <div class="container-fluid mt-5">
   <div class="row d-flex justify-content-center">
     <div class="col-md-9">
@@ -61,7 +74,7 @@
               <div class="comment mt-2 mb-2" id="cm-{{ $comment->id }}">
                 <div class="comment-inner">
                   <div class="row">
-                    <div class="col-md-5 col-8">
+                    <div class="col-md-5 col-4">
                       <div class="writer">
                         <img class="avatar" src="{{ $comment->user->avatar_path }}">
                         <span class="name ml-2 d-lg-inline d-none">{{ $comment->user->name }}
@@ -71,7 +84,7 @@
                         </span>
                       </div>
                     </div>
-                    <div class="col-md-7 col-4">
+                    <div class="col-md-7 col-8">
                       <div class="date w-100">
                         <span class="float-right">
                           @php
@@ -108,7 +121,7 @@
                   <div class="action mt-2 mb-2 ml-5 w-100">
                     <div class="row">
                       <div class="col-lg-10">
-                        <button type="button" class="reply-btn" data-cm-id="{{ $comment->id }}">Reply</button>
+                        <button type="button" class="reply-btn" data-cm-id="{{ $comment->id }}">Trả lời</button>
                       </div>
                     </div>
                   </div>
@@ -130,7 +143,7 @@
                         <div class="comment mt-2 mb-2">
                           <div class="comment-inner">
                             <div class="row">
-                              <div class="col-md-4 col-8">
+                              <div class="col-md-4 col-4">
                                 <div class="writer">
                                   <img class="avatar" src="{{ $reply->user->avatar_path }}">
                                   <span class="name ml-2 d-lg-inline d-none">{{ $reply->user->name }}
@@ -140,7 +153,7 @@
                                   </span>
                                 </div>
                               </div>
-                              <div class="col-md-8 col-4">
+                              <div class="col-md-8 col-8">
                                 <div class="date w-100">
                                   <span class="float-right">
                                     @php
@@ -177,7 +190,7 @@
                             <div class="action mt-2 mb-2 ml-5 w-100">
                               <div class="row">
                                 <div class="col-lg-10">
-                                  <button type="button" class="reply-btn" data-cm-id='{{ $reply->parent->id }}'>Reply</button>
+                                  <button type="button" class="reply-btn" data-cm-id='{{ $reply->parent->id }}'>Trả lời</button>
                                 </div>
                               </div>
                             </div>
@@ -224,7 +237,7 @@
             </div>
             @else
             <div class="login-warning-container mt-2 mb-2">
-              <button type="button" onclick="window.location.href = '/bongden_login?previous=' + window.location.href">Login to Continue</button>
+              <button type="button" onclick="window.location.href = '/bongden_login?previous=' + window.location.href">Đăng nhập để bình luận</button>
             </div>
             @endif
           </div>

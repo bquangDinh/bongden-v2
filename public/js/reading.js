@@ -41,6 +41,27 @@ $(document).ready(function(){
       }
     });
   });
+
+  window.fbAsyncInit = function(){
+FB.init({
+    appId: '681364862313844', status: true, cookie: true, xfbml: true });
+};
+(function(d, debug){var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+    if(d.getElementById(id)) {return;}
+    js = d.createElement('script'); js.id = id;
+    js.async = true;js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+    ref.parentNode.insertBefore(js, ref);}(document, /*debug*/ false));
+function postToFeed(title, desc, url, image){
+var obj = {method: 'feed',link: url, picture: 'http://www.url.com/images/'+image,name: title,description: desc};
+function callback(response){}
+FB.ui(obj, callback);
+}
+
+  $("#share-fb-btn").on('click',function(e){
+    let elem = $(this);
+    postToFeed(elem.data('title'), elem.data('desc'), elem.data('href'), elem.data('image'));
+    return false;
+  });
 });
 
 $(window).resize(function(){
@@ -80,10 +101,11 @@ function reActiveReplyEvent(){
         if(data == "false"){
           Swal.fire({
             type:'error',
-            title:'Login to continue',
+            title:'Đăng nhập để tiếp tục',
             showConfirmButton:true,
             showCancelButton:true,
-            confirmButtonText:"Login now ?",
+            confirmButtonText:"Đăng nhập",
+            cancleButtonText:'Đóng'
           }).then(function(result){
             if(result.value){
               window.location.href = "/bongden_login";

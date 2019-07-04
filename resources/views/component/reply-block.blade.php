@@ -9,7 +9,7 @@
       <div class="reply-block mt-2 mb-2">
         <div class="comment-inner">
           <div class="row">
-            <div class="col-md-4 col-8">
+            <div class="col-md-4 col-4">
               <div class="writer">
                 <img class="avatar" src="{{ Auth::user()->avatar_path }}">
                 <span class="name ml-2 d-lg-inline d-none">{{ Auth::user()->name }} <i class="fas fa-star" style="color: #FFB936"></i></span>
