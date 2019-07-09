@@ -10,7 +10,7 @@ Bóng Đèn
 @endsection
 
 @section('main-content')
-<div style="margin-top: 100px;">
+<div style="margin-top: 100px;" class="d-none d-lg-block">
 
 </div>
 <div class="container-fluid">

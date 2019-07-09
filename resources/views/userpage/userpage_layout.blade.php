@@ -203,7 +203,7 @@
                   <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="mr-3">
                       <div class="icon-circle bg-primary">
-                        <img src='{{ json_decode($notify->content_as_json,true)["user_avatar"] }}' style="height: 30px;width: 30px;border-radius: 50%"/>
+                        <img src='{{ str_replace('\\','/',json_decode($notify->content_as_json,true)["user_avatar"]) }}' style="height: 30px;width: 30px;border-radius: 50%;object-fit: cover"/>
                       </div>
                     </div>
                     <div>
@@ -215,7 +215,7 @@
                   @endif
                   @endforeach
                 </div>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                <a class="dropdown-item text-center small text-gray-500" href="/user/notification">Show All Alerts</a>
               </div>
             </li>
 

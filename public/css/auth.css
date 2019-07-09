@@ -4,6 +4,7 @@ body{
 
 .sign-in-up-container{
   width: 100%;
+  min-height: 650px;
   height: 90vh;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -31,6 +32,7 @@ body{
 
 .account-form{
   width: 100%;
+  min-height: 650px;
   height: 90vh;
   position: relative;
   border-top-right-radius: 20px;
@@ -56,7 +58,7 @@ body{
 
 .account-form .form{
   position: absolute;
-  top: 0;
+  top: 50px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -106,7 +108,7 @@ body{
 
 .account-form #sign-up-btn,.account-form #sign-in-btn{
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 0%;
   background-color: transparent;
   color: #333333;

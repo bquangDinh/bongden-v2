@@ -31,8 +31,10 @@ Route::get('bongden_logout','AuthSession@destroy')->name('bongden_logout');
 
 Route::group(['prefix' => 'user','middleware' => 'checklogin'],function(){
   Route::get('/','UserController@index')->name('user_dashboard');
-  Route::post('/add_image','ImageController@add');
+  Route::get('/notification','UserController@show_notification');
   
+  Route::post('/add_image','ImageController@add');
+
   Route::prefix('profile')->group(function(){
     Route::get('/','UserController@profile');
     Route::post('/update','UserController@update_profile')->name('update_profile');

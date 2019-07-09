@@ -78,6 +78,10 @@ class UserController extends Controller
       return $image->image_path;
     }
 
+    public function show_notification(){
+      return view('userpage.user_notification');
+    }
+
     public function show_editing_article($article_id){
       $article = Article::find($article_id);
       if(!$article){

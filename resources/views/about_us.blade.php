@@ -10,6 +10,17 @@ Bóng Đèn
 @endsection
 
 @section('main-content')
+<div class="loader">
+  <div class="d-flex justify-content-center align-items-center flex-column w-100 h-100">
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="waiting-text">
+      Bóng Đèn đang sáng, đợi chút nha !
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="upper-side">
     <div class="row">
@@ -36,7 +47,7 @@ Bóng Đèn
       </div>
       <div class="col-10">
         <div class="bongden-intro-grid">
-          <div class="bd-name d-flex justify-content-center align-items-center">
+          <div class="bd-name-panel">
             <div class="name animated slideInLeft">
               BÓNG ĐÈN
             </div>
@@ -82,8 +93,8 @@ Bóng Đèn
 <div class="co-founder-container">
 
   <div class="cfound-description d-flex justify-content-center align-items-center">
-    <div style="width: 80%;text-align:justify">
-      Dạ Thi là người sáng lập có dũng khí nhất trong 3 đứa tụi mình. Cậu ấy thường xuyên đưa ra những ý tưởng, thúc giục bọn mình thử nghiệm, luôn là người tiên phong, là người khởi xướng. Mọi thay đổi lớn đều bắt đầu từ những chuyển biến nhỏ bước đầu.
+    <div class="description">
+      <i class="fas fa-quote-left"></i> Bóng Đèn với mình như là nhà, dù có đi đâu vẫn luôn dõi theo, luôn hướng về và luôn cố gắng hỗ trợ hết mức có thể.  <i class="fas fa-quote-right"></i>
     </div>
   </div>
   <div class="cfound-cover-1">
@@ -98,7 +109,7 @@ Bóng Đèn
 <div class="co-founder-container-s-1">
 
   <div class="cfound-description d-flex justify-content-center align-items-center">
-    <div style="width: 80%;text-align:justify">
+    <div class="description">
       Nói đến Châu, người ta thường liên tưởng đến loài động vật da đen cần cù, đặc biệt là khi con vật này có vấn đề về mắt. Quả thực như vậy, Châu, bí danh Trâu Lé, cực kì siêng năng và chu đáo.
     </div>
   </div>
@@ -114,8 +125,8 @@ Bóng Đèn
 <div class="co-founder-container">
 
   <div class="cfound-description d-flex justify-content-center align-items-center">
-    <div style="width: 80%;text-align:justify">
-      Bơ lặng lẽ, âm thầm nhưng cháy ngầm theo cách riêng của Bơ, và cũng vì rứa mà Bơ là một phần không thể thiếu của Bóng Đèn trong em. Từ những lần lê lết chạy thử thí nghiệm, phóng xe đi nhận hàng ở những chỗ độc đáo nhất, ăn chơi trên trời dưới biển hay trăm nghìn công việc không tên trong những ngày chuẩn bị nước rút, chưa có lần mô Bơ vắng bóng.
+    <div class="description">
+      <i class="fas fa-quote-left"></i> Chị hi vọng là nơi không chỉ để những người thắp đèn làm việc cùng nhau, mà còn là một chỗ để mọi người khi nghĩ về những câu chuyện xinh đẹp của tuổi trẻ, thì Bóng Đèn vẫn luôn luôn là một phần toả sáng hí. <i class="fas fa-quote-right"></i>
     </div>
   </div>
   <div class="cfound-cover-1">
@@ -289,7 +300,10 @@ Bóng Đèn
     <div class="event-mask"></div>
     <div class="event-name d-flex justify-content-center align-items-center">
       <div>
-        LẠC VÀO RỪNG NGỐ
+        LẠC VÀO R BAN THIẾT KẾ - @DESTEAM
+THPT chuyên Quốc Học
+Thế hệ 3
+Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
       </div>
     </div>
   </div>
@@ -326,92 +340,287 @@ Bóng Đèn
   </div>
 
   <div class="leader-container">
-    <div class="row">
-      <div class="col-6">
-        <div class="leader">
-          <div class="row">
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <img src="{{ URL::asset('sources/images/hanhnhi.jpg') }}" class="leader-avatar">
+    <div class="leader-layout mt-2 mb-2 w-100 d-flex justify-content-center align-items-center">
+      <div class="leader-grid" id="l-1">
+        <div class="cover">
+          <img src="{{ URL::asset('sources/images/hanhnhi.jpg') }}">
+          <div class="color-layer"></div>
+        </div>
+        <div class="name">
+          Phan Nguyễn Hạnh Nhi
+        </div>
+        <div class="description"></div>
+        <div class="description-inner d-flex justify-content-center align-items-center">
+          <div class="w-75 h-75">
+            <div style="font-family: Roboto-Black;letter-spacing: 5px">
+              BẢN THÂN
             </div>
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <div>
-                <div class="leader-name">
-                  Phan Nguyễn Hạnh Nhi
-                </div>
-                <div class="leader-position">
-                  Ban điều hành
-                </div>
-              </div>
+            <div class="mt-5" style="font-family: Roboto-Black;letter-spacing: 3px">
+              <i class="fas fa-users"></i> BAN ĐIỀU HÀNH
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-graduation-cap"></i> THPT chuyên Quốc Học
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-dot-circle"></i> Thế hệ 3
+            </div>
+            <div class="mt-3" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Đồng sáng lập Dự án vì môi trường "Ngàn Dặm Xanh"
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Trại sinh Trại hè Harvard-Vietnam - HVIET 2017
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Thành viên ban Truyền thông Trại hè quốc tế "Think On"
+            </div>
+            <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
+              <a href="https://www.facebook.com/profile.php?id=100007876366078">
+                <i class="fab fa-facebook-square"></i>
+              </a>
             </div>
           </div>
         </div>
+        <div class="previous d-flex justify-content-center align-items-center">
+          <button type="button" class="leader-previous-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <div class="next">
+          <button type="button" class="leader-next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
-      <div class="col-6">
-        <div class="leader">
-          <div class="row">
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <img src="{{ URL::asset('sources/images/nguyentruongan.jpg') }}" class="leader-avatar">
+
+      <div class="leader-grid" id="l-2" style="display: none">
+        <div class="cover">
+          <img src="{{ URL::asset('sources/images/nguyentruongan.jpg') }}">
+          <div class="color-layer"></div>
+        </div>
+        <div class="name">
+          Nguyễn Trường An
+        </div>
+        <div class="description"></div>
+        <div class="description-inner d-flex justify-content-center align-items-center">
+          <div class="w-75 h-75">
+            <div style="font-family: Roboto-Black;letter-spacing: 5px">
+              BẢN THÂN
             </div>
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <div>
-                <div class="leader-name">
-                  Nguyễn Trường An
-                </div>
-                <div class="leader-position">
-                  Ban điều hành
-                </div>
-              </div>
+            <div class="mt-5" style="font-family: Roboto-Black;letter-spacing: 3px">
+              <i class="fas fa-users"></i> BAN ĐIỀU HÀNH
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-graduation-cap"></i> Đại học Y - Dược Huế
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-dot-circle"></i> Thế hệ 3
+            </div>
+            <div class="mt-3" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> CLB Humans of Quoc Hoc : Thành viên ban Lấy Chuyện (mùa 2, 3, 4), Phó Chủ nhiệm CLB (mùa 3,4)
+            </div>
+            <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
+              <a href="https://www.facebook.com/phonghinhhinhphong">
+                <i class="fab fa-facebook-square"></i>
+              </a>
             </div>
           </div>
         </div>
+        <div class="previous d-flex justify-content-center align-items-center">
+          <button type="button" class="leader-previous-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <div class="next">
+          <button type="button" class="leader-next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
+
+      <div class="leader-grid" id="l-3" style="display: none">
+        <div class="cover">
+          <img src="{{ URL::asset('sources/images/cattuong.jpg') }}">
+          <div class="color-layer"></div>
+        </div>
+        <div class="name">
+          Lê Minh Cát Tường
+        </div>
+        <div class="description"></div>
+        <div class="description-inner d-flex justify-content-center align-items-center">
+          <div class="w-75 h-75">
+            <div style="font-family: Roboto-Black;letter-spacing: 5px">
+              BẢN THÂN
+            </div>
+            <div class="mt-5" style="font-family: Roboto-Black;letter-spacing: 3px">
+              <i class="fas fa-users"></i> BAN THIẾT KẾ - @DESTEAM
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-graduation-cap"></i> THPT chuyên Quốc Học
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-dot-circle"></i> Thế hệ 3
+            </div>
+            <div class="mt-3" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone
+            </div>
+            <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
+              <a href="https://www.facebook.com/marc.d.cttl">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="previous d-flex justify-content-center align-items-center">
+          <button type="button" class="leader-previous-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <div class="next">
+          <button type="button" class="leader-next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="leader-grid" id="l-4" style="display: none">
+        <div class="cover">
+          <img src="{{ URL::asset('sources/images/quynhthi.jpg') }}">
+          <div class="color-layer"></div>
+        </div>
+        <div class="name">
+          Nguyễn Nữ Quỳnh Thi
+        </div>
+        <div class="description"></div>
+        <div class="description-inner d-flex justify-content-center align-items-center">
+          <div class="w-75 h-75">
+            <div style="font-family: Roboto-Black;letter-spacing: 5px">
+              BẢN THÂN
+            </div>
+            <div class="mt-5" style="font-family: Roboto-Black;letter-spacing: 3px">
+              <i class="fas fa-users"></i> TRƯỞNG BAN HẬU CẦN - QUAN HỆ TÀI TRỢ
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-graduation-cap"></i> THPT chuyên Quốc Học
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-dot-circle"></i> Thế hệ 3
+            </div>
+            <div class="mt-3" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Chủ nhiệm Quoc Hoc Artsy Zone (CLB Mỹ thuật)
+            </div>
+            <div class="mt-3" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Thành viên dự án môi trường Ngàn Dặm Xanh
+            </div>
+            <div class="mt-3" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Đại diện Việt Nam tham gia trại hè AEC - Thái Lan
+            </div>
+            <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
+              <a href="https://www.facebook.com/profile.php?id=100008324312211">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="previous d-flex justify-content-center align-items-center">
+          <button type="button" class="leader-previous-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <div class="next">
+          <button type="button" class="leader-next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="leader-grid" id="l-5" style="display: none">
+        <div class="cover">
+          <img src="{{ URL::asset('sources/images/LP.jpg') }}">
+          <div class="color-layer"></div>
+        </div>
+        <div class="name">
+          Lê Lâm Phương
+        </div>
+        <div class="description"></div>
+        <div class="description-inner d-flex justify-content-center align-items-center">
+          <div class="w-75 h-75">
+            <div style="font-family: Roboto-Black;letter-spacing: 5px">
+              BẢN THÂN
+            </div>
+            <div class="mt-5" style="font-family: Roboto-Black;letter-spacing: 3px">
+              <i class="fas fa-users"></i> TRƯỞNG BAN TRUYỀN THÔNG
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-graduation-cap"></i> THPT chuyên Quốc Học
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-dot-circle"></i> Thế hệ 3
+            </div>
+            <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
+              <a href="https://www.facebook.com/lamphuongle2202">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="previous d-flex justify-content-center align-items-center">
+          <button type="button" class="leader-previous-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <div class="next">
+          <button type="button" class="leader-next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="leader-grid" id="l-6" style="display: none">
+        <div class="cover">
+          <img src="{{ URL::asset('sources/images/QĐ.png') }}">
+          <div class="color-layer"></div>
+        </div>
+        <div class="name">
+          Bùi Quang Đính
+        </div>
+        <div class="description"></div>
+        <div class="description-inner d-flex justify-content-center align-items-center">
+          <div class="w-75 h-75">
+            <div style="font-family: Roboto-Black;letter-spacing: 5px">
+              BẢN THÂN
+            </div>
+            <div class="mt-5" style="font-family: Roboto-Black;letter-spacing: 3px">
+              <i class="fas fa-users"></i> TRƯỞNG BAN NỘI DUNG
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-graduation-cap"></i> THPT Nguyễn Huệ
+            </div>
+            <div class="mt-2" style="font-family: Roboto-Medium">
+              <i class="fas fa-dot-circle"></i> Thế hệ 3
+            </div>
+            <div class="mt-3" style="font-family: Roboto-Medium;font-size:14px">
+              <i class="fas fa-dot-circle"></i> Trưởng ban Kĩ Thuật CPO Nguyễn Huệ
+            </div>
+            <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
+              <a href="https://www.facebook.com/BiQaDi">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="previous d-flex justify-content-center align-items-center">
+          <button type="button" class="leader-previous-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <div class="next">
+          <button type="button" class="leader-next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
     </div>
-
-    <br />
-
-    <div class="row">
-      <div class="col-6">
-        <div class="leader">
-          <div class="row">
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <img src="{{ URL::asset('sources/images/cattuong.jpg') }}" class="leader-avatar">
-            </div>
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <div>
-                <div class="leader-name">
-                  Lê Cát Tường
-                </div>
-                <div class="leader-position">
-                  Trưởng ban thiết kế
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="leader">
-          <div class="row">
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <img src="{{ URL::asset('sources/images/quynhthi.jpg') }}" class="leader-avatar">
-            </div>
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <div>
-                <div class="leader-name">
-                  Quỳnh Thi
-                </div>
-                <div class="leader-position">
-                  Trưởng ban hậu cần - quan hệ tài trợ
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
   </div>
 
   </div>
@@ -422,20 +631,5 @@ Bóng Đèn
 
 @section('js')
 <script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-      $(".event.is-open").each(function(index){
-        $(this).find('.event-mask').addClass("is-open");
-        $(this).find('.event-name').addClass('is-open');
-      });
-  });
-
-  $(".event").on('click',function(e){
-    $(this).find('.event-mask').toggleClass('is-open');
-    $(this).find('.event-name').toggleClass('is-open');
-  });
-
-  new WOW().init();
-</script>
-
+<script type="text/javascript" src="{{ URL::asset('js/about_us.js') }}"></script>
 @endsection

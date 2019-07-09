@@ -61,11 +61,11 @@
             <label for="user-gender">Giới tính</label>
             <select class="form-control" name="sex" id="user-gender">
               @if(Auth::user()->sex == "male")
-              <option value="male" selected>Male</option>
-              <option value="famale">Famale</option>
+              <option value="male" selected>Nam</option>
+              <option value="famale">Nữ</option>
               @else
-              <option value="male">Male</option>
-              <option value="famale" selected>Famale</option>
+              <option value="male">Nam</option>
+              <option value="famale" selected>Nữ</option>
               @endif
             </select>
           </div>
