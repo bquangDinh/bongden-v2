@@ -17,7 +17,7 @@ Bóng Đèn
       <div class="dot2"></div>
     </div>
     <div class="waiting-text">
-      Bóng Đèn đang sáng, đợi chút nha !
+      Bóng Đèn đang sáng, đợi chút nha ! ( <span id="loaded-percentage"></span> <i class="fas fa-percentage"></i> )
     </div>
   </div>
 </div>
@@ -56,7 +56,7 @@ Bóng Đèn
             <img src="{{ URL::asset('sources/images/IMG_8358.JPG') }}" class="animated slideInRight">
           </div>
           <div class="bd-2th-image">
-            <img src="{{ URL::asset('sources/images/image.png') }}" class="animated fadeInUp delay-1s">
+            <img src="{{ URL::asset('sources/images/image.jpg') }}" class="animated fadeInUp delay-1s">
           </div>
           <div class="bd-intro d-flex justify-content-center align-items-center">
             <div style="width: 90%;text-align: justify" class="wow animated fadeIn">
@@ -300,10 +300,7 @@ Bóng Đèn
     <div class="event-mask"></div>
     <div class="event-name d-flex justify-content-center align-items-center">
       <div>
-        LẠC VÀO R BAN THIẾT KẾ - @DESTEAM
-THPT chuyên Quốc Học
-Thế hệ 3
-Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
+        LẠC VÀO RỪNG NGỐ
       </div>
     </div>
   </div>
@@ -374,7 +371,7 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
               <i class="fas fa-dot-circle"></i> Thành viên ban Truyền thông Trại hè quốc tế "Think On"
             </div>
             <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
-              <a href="https://www.facebook.com/profile.php?id=100007876366078">
+              <a href="https://www.facebook.com/profile.php?id=100007876366078" target="_blank">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </div>
@@ -419,7 +416,7 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
               <i class="fas fa-dot-circle"></i> CLB Humans of Quoc Hoc : Thành viên ban Lấy Chuyện (mùa 2, 3, 4), Phó Chủ nhiệm CLB (mùa 3,4)
             </div>
             <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
-              <a href="https://www.facebook.com/phonghinhhinhphong">
+              <a href="https://www.facebook.com/phonghinhhinhphong" target="_blank">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </div>
@@ -464,7 +461,7 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
               <i class="fas fa-dot-circle"></i> Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone
             </div>
             <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
-              <a href="https://www.facebook.com/marc.d.cttl">
+              <a href="https://www.facebook.com/marc.d.cttl" target="_blank">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </div>
@@ -515,7 +512,7 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
               <i class="fas fa-dot-circle"></i> Đại diện Việt Nam tham gia trại hè AEC - Thái Lan
             </div>
             <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
-              <a href="https://www.facebook.com/profile.php?id=100008324312211">
+              <a href="https://www.facebook.com/profile.php?id=100008324312211" target="_blank">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </div>
@@ -557,7 +554,7 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
               <i class="fas fa-dot-circle"></i> Thế hệ 3
             </div>
             <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
-              <a href="https://www.facebook.com/lamphuongle2202">
+              <a href="https://www.facebook.com/lamphuongle2202" target="_blank">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </div>
@@ -577,7 +574,7 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
 
       <div class="leader-grid" id="l-6" style="display: none">
         <div class="cover">
-          <img src="{{ URL::asset('sources/images/QĐ.png') }}">
+          <img src="{{ URL::asset('sources/images/QD.jpg') }}">
           <div class="color-layer"></div>
         </div>
         <div class="name">
@@ -602,7 +599,7 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
               <i class="fas fa-dot-circle"></i> Trưởng ban Kĩ Thuật CPO Nguyễn Huệ
             </div>
             <div class="mt-2 w-100 d-flex justify-content-center" style="font-size:2em">
-              <a href="https://www.facebook.com/BiQaDi">
+              <a href="https://www.facebook.com/BiQaDi" target="_blank">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </div>
@@ -631,5 +628,6 @@ Trưởng ban Truyền Thông CLB Quoc Hoc Artsy Zone ỪNG NGỐ
 
 @section('js')
 <script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/vendor/imagesloaded.pkgd.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/about_us.js') }}"></script>
 @endsection

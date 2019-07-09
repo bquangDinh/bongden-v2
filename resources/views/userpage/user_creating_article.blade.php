@@ -81,7 +81,7 @@
   </div>
 
   <div class="row d-flex justify-content-center">
-    <div class="col-4 d-flex justify-content-around">
+    <div class="col-md-4 col-sm-10 d-flex justify-content-around">
       <button type="submit" name="submit" value="upload" class="btn btn-success btn-icon-split">
         <span class="icon text-white-50">
           <i class="fas fa-plus"></i>

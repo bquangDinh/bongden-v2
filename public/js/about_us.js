@@ -21,8 +21,17 @@ $(document).ready(function(){
     });
 });
 
-$(window).on("load",function(e){
-  $(".loader").fadeOut(500);
+var body = document.body;
+var imageLoad = imagesLoaded(body);
+var imageCount = imageLoad.images.length;
+var loadedImageCount = 0;
+imageLoad.on('progress',function(instance,image){
+  loadedImageCount++;
+  let percentage = parseInt((loadedImageCount / imageCount) * 100);
+  $("#loaded-percentage").text(percentage);
+});
+imageLoad.on("done",function(instance){
+    $(".loader").fadeOut(500);
 });
 
 $(".event").on('click',function(e){
