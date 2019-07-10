@@ -118,7 +118,7 @@
               <img src="{{ Auth::user()->avatar_path }}" id="user-avatar" data-usn="{{ Auth::user()->name }}">
               @else
               <button type="button" class="nav-right-item" onclick="window.location.href = '/bongden_login'">
-                <i class="far fa-user"></i>
+                <i class="fas fa-sign-in-alt"></i>
               </button>
               @endif
             </li>

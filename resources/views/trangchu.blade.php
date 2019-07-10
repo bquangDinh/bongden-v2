@@ -5,6 +5,11 @@ Bóng Đèn
 @endsection
 
 @section('css')
+<meta property="og:description" content="Mang khoa học thú vị tới với mọi người" />
+<meta property="og:url" content="http://bongden.org" />
+<meta property="og:image:url" content="{{ URL::asset('sources/images/frame_008_delay-0.03s.jpg') }}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="fb:app_id" content="681364862313844" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 <link rel="stylesheet" href="{{ URL::asset('css/vendor/slick.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('css/vendor/slick-theme.css') }}">
@@ -25,6 +30,7 @@ Bóng Đèn
         <div class="col-md-11 col-sm-11">
           <div class="row">
             <div class="col-12">
+              <!--
               <div class="lastest-article">
                 <div class="row no-gutters">
                   <div class="col-lg-7 col-md-12">
@@ -61,6 +67,46 @@ Bóng Đèn
                   </div>
                 </div>
               </div>
+            -->
+            <div class="lastest-article">
+              <div class="row no-gutters">
+                <div class="col-lg-7 col-md-12">
+                  <div class="cover">
+                    <img src="https://cdn.dribbble.com/users/1855626/screenshots/4657120/attachments/1051936/forest_hi.jpg">
+                  </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                  <div class="article-info">
+                    <a class="subject text-center" style="background: #e74c3c">
+                      Đặc biệt
+                    </a>
+                    <div class="info">
+                      <div class="title">
+                        <p>Trại Hè Bóng Đèn 2019</p>
+                      </div>
+                      <div class="author">
+                        <img class="avatar" src="{{ $lastest_article->user->avatar_path }}">
+                        <div class="name">
+                          Bóng Đèn Team
+                        </div>
+                      </div>
+                      <div class="description">
+                        <div>
+                          Những bài học mới lạ về thế giới khoa học sẽ được Bóng Đèn truyền tải qua những hoạt động, trò chơi hết sức sinh động qua 3 ngày trại hè. Còn chờ gì nữa, hãy nhanh tay đăng ký để trở thành trại sinh của Bóng Đèn 2019.
+                        </div>
+                        <div>
+                          Thời hạn đăng ký: <span id="timeleft" style="color: #e74c3c;font-weight: bold"></span> <i class="fas fa-hourglass-half animated flash infinite slow"></i>
+                        </div>
+                        <button type="button" class="btn btn-outline-danger">Trở thành trại sinh</button>
+                      </div>
+                    </div>
+                    <div class="read-more-section">
+                      <button type="button" onclick="window.location.href = '/bongden-camp'">Tìm hiểu thêm</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
           <br />
@@ -111,4 +157,21 @@ Bóng Đèn
 <script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/vendor/slick.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/trangchu.js') }}"></script>
+<script type="text/javascript">
+  var countDownDate = new Date("Aug 3,2019 07:30:00").getTime();
+  var x = setInterval(function(){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    $("#timeleft").text(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+    if(distance < 0){
+      clearInterval(x);
+      $("timeleft").text("Đã hết hạn");
+      $("timeleft").css("color","#e74c3c");
+    }
+  },1000);
+</script>
 @endsection

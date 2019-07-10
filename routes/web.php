@@ -13,7 +13,9 @@
 
 Route::get('/','HomePageController@index')->name('homepage');
 Route::get('/article','ArticleController@articles');
-
+Route::get('/bongden-camp',function(){
+  return view('bongden-camp');
+});
 Route::get('/about_us', function () {
     return view('about_us');
 });
@@ -32,7 +34,7 @@ Route::get('bongden_logout','AuthSession@destroy')->name('bongden_logout');
 Route::group(['prefix' => 'user','middleware' => 'checklogin'],function(){
   Route::get('/','UserController@index')->name('user_dashboard');
   Route::get('/notification','UserController@show_notification');
-  
+
   Route::post('/add_image','ImageController@add');
 
   Route::prefix('profile')->group(function(){
