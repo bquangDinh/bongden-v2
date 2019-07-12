@@ -13,7 +13,7 @@ class HomePageController extends Controller
       }])->orderBy('created_at','desc')->first();
       $articles = Article::with(['getState' => function($query){
         $query->where('state','uploaded');
-      }])->where('id','<>',$lastest_article->id)->orderBy('created_at','desc')->take(6)->get();
+      }])->orderBy('created_at','desc')->take(6)->get();
 
       return view('trangchu')->with('lastest_article',$lastest_article)->with('articles',$articles);
     }

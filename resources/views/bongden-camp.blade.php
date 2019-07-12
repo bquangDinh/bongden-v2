@@ -1,11 +1,13 @@
 @extends('layouts.main')
 
 @section('title')
-Trại hè Bóng Đèn 2019
+Trại hè Khoa Học Bóng Đèn 2019
 @endsection
 
 @section('css')
 <meta property="og:description" content="Trại hè Bóng Đèn đã trở lại !!!" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Trại hè Bóng Đèn 2019" />
 <meta property="og:url" content="http://bongden.org/bongden-camp" />
 <meta property="og:image:url" content="{{ URL::asset('sources/images/bongden-camp/forest_hi.jpg') }}" />
 <meta property="og:image:type" content="image/jpeg" />
@@ -28,18 +30,14 @@ Trại hè Bóng Đèn 2019
   <div class="row">
     <div class="col-md-6 col-12 d-flex justify-content-center align-items-center flex-column" >
       <h1 style="font-family: iCielPanton-Black;color:#FED899 ;font-size: 3em;text-shadow: 3px 3px 0 #333; " class="animated bounceIn wow">
-        Trại hè Bóng Đèn
+        Trại hè Khoa Học Bóng Đèn
       </h1>
       <div style="font-family: iCielPanton-Black;font-size: 2.5em" class="glitch" data-text="2019">
         2019
       </div>
       <div style="font-family: Comfortaa-Regular;font-size: 14px;text-align:justify;width:280px" class="animated bounceInDown delay-1s wow">
-        Chắc các em đang băn khoăn, không biết nên đi đâu, làm gì để những ngày hè ít ỏi còn lại thật sự "có nghĩa" phải không? Rất đơn giản, Trại hè Bóng Đèn 2018 hứa hẹn sẽ là một hoạt động không thể bỏ qua đấy!
+        Chắc các em đang băn khoăn, không biết nên đi đâu, làm gì để những ngày hè ít ỏi còn lại thật sự "có nghĩa" phải không? Rất đơn giản, Trại hè Khoa Học Bóng Đèn 2019 hứa hẹn sẽ là một hoạt động không thể bỏ qua đấy!
       </div>
-      <div class="mt-2 mb-2">
-        <button type="button" class="btn btn-outline-danger animated swing wow delay-1s" style="border-radius: 20px">Trở thành trại sinh</button>
-      </div>
-
     </div>
     <div class="col-md-6 col-12 d-flex justify-content-center">
       <div class="image-grid mb-5">
@@ -89,7 +87,7 @@ Trại hè Bóng Đèn 2019
       </div>
     </div>
     <div class="col-6 d-flex justify-content-center align-items-center">
-      <img class="animted wow zoomIn" src="{{ URL::asset('sources/images/bongden-camp/artboard-removebg-preview.png') }}">
+      <img class="animted wow zoomIn i-l" src="{{ URL::asset('sources/images/bongden-camp/artboard-removebg-preview.png') }}">
     </div>
   </div>
   <div class="row">
@@ -99,17 +97,17 @@ Trại hè Bóng Đèn 2019
       </div>
     </div>
     <div class="col-6 d-flex justify-content-center align-items-center">
-      <img class="animted wow zoomIn" src="{{ URL::asset('sources/images/bongden-camp/resource_illustrations_affinity_designer-removebg-preview.png') }}">
+      <img class="animted wow zoomIn i-l" src="{{ URL::asset('sources/images/bongden-camp/resource_illustrations_affinity_designer-removebg-preview.png') }}">
     </div>
   </div>
   <div class="row">
     <div class="col-6 d-flex justify-content-center align-items-center">
       <div class="st animated wow lightSpeedIn">
-        <i class="fas fa-dot-circle animated heartBeat infinite"></i> 3 ngày trại hè
+        <i class="fas fa-dot-circle animated heartBeat infinite"></i> Với 3 ngày trại hè
       </div>
     </div>
     <div class="col-6 d-flex justify-content-center align-items-center">
-      <img class="animted wow zoomIn" src="{{ URL::asset('sources/images/bongden-camp/140929_3rd_anniversary-removebg-preview(1).png') }}">
+      <img class="animted wow zoomIn i-l" src="{{ URL::asset('sources/images/bongden-camp/140929_3rd_anniversary-removebg-preview(1).png') }}">
     </div>
   </div>
 </div>
@@ -129,8 +127,184 @@ Trại hè Bóng Đèn 2019
     <div style="clear: both">
     </div>
   </div>
-  <div class="w-100 d-flex justify-content-center mt-5 mb-5">
-    <button type="button" class="btn btn-outline-danger animated wow rollIn" style="border-radius: 20px">Đăng ký ngay</button>
+  <div class="w-100 mt-5 mb-5">
+    <div class="row">
+      <div class="col-6 d-flex justify-content-center flex-column align-items-center">
+        <h3 class="p-regis animated fadeIn wow">Tại Huế</h3>
+        <button type="button" class="btn btn-outline-danger animated wow rollIn" style="border-radius: 20px">Đăng ký ngay</button>
+      </div>
+      <div class="col-6 d-flex justify-content-center flex-column align-items-center">
+        <h3 class="p-regis animated fadeIn wow">Tại Đà Nẵng</h3>
+        <button type="button" class="btn btn-outline-danger animated wow rollIn" style="border-radius: 20px" onclick="window.location.href='https://forms.gle/T6BZFvf1Lb6b3fe6A'">Đăng ký ngay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-100 d-flex justify-content-center flex-column align-items-center"  style="background: #ecf0f1">
+  <div class="mi-t mt-5 wow animated zoomIn">
+    Đóng góp
+  </div>
+  <div class="mt-2 wow animated zoomIn delay-1s fast" style="font-family: Comfortaa-Bold">
+    Tích điện cho mùa trại hè thêm sáng nào !
+  </div>
+</div>
+<div class="container-fluid" style="background: #ecf0f1">
+  <div class="row no-gutters">
+    <div class="col-md-6 col-12">
+      <div class="donate-form d-flex justify-content-center align-items-center flex-column mb-3 mt-3 animated wow slideInLeft">
+        <div class="d-m-form d-flex justify-content-center align-items-center flex-column">
+          <div style="font-family: iCielPanton-Black;text-align:center;font-size: 1.5em" class="mb-3 wow animated fadeInDown">
+            Hiện kim
+          </div>
+          <div class="c-gr row mb-3 wow animated flipInX delay-1s">
+            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-t">
+                Số tài khoản
+              </div>
+            </div>
+            <div class="col-md-8 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-in">
+                0161001684663
+              </div>
+            </div>
+          </div>
+          <div class="c-gr row mb-3 wow animated flipInX delay-1s">
+            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-t">
+                Chủ tài khoản
+              </div>
+            </div>
+            <div class="col-md-8 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-in">
+                PHAN NGUYEN HANH NHI
+              </div>
+            </div>
+          </div>
+          <div class="c-gr row mb-3 wow animated flipInX delay-1s">
+            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-t">
+                Ngân hàng
+              </div>
+            </div>
+            <div class="col-md-8 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-in">
+                Vietcombank
+              </div>
+            </div>
+          </div>
+          <div class="c-gr row mb-3 wow animated flipInX delay-1s">
+            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-t">
+                Chi nhánh
+              </div>
+            </div>
+            <div class="col-md-8 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-in">
+                Thừa Thiên Huế
+              </div>
+            </div>
+          </div>
+          <div class="c-gr row mb-3 wow animated flipInX delay-1s">
+            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-t">
+                Lời nhắn
+              </div>
+            </div>
+            <div class="col-md-8 col-12 d-flex justify-content-center align-items-center">
+              <div class="c-in">
+                [BONGDEN]_HỌ&TÊN_SĐT
+              </div>
+            </div>
+          </div>
+          <button type="button" id="copy-c-info" class="wow animated jackInTheBox delay-2s">
+            Sao chép
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-12">
+      <div class="donate-form d-flex justify-content-center align-items-center mb-3 mt-3 wow animated slideInRight">
+        <div class="d-m-form d-flex justify-content-center align-items-center flex-column">
+          <div style="font-family: iCielPanton-Black;text-align:center;font-size: 1.5em" class="mb-3 wow animated fadeInUp">
+            Hiện vật
+          </div>
+          <div class="hv-c mb-3 wow animated fadeInRight delay-1s">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="col-10">
+                Các bữa ăn trưa, ăn nhẹ
+              </div>
+            </div>
+          </div>
+          <div class="hv-c mb-3 wow animated fadeInRight delay-1s">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="col-10">
+                Nước uống
+              </div>
+            </div>
+          </div>
+          <div class="hv-c mb-3 wow animated fadeInRight delay-1s">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="col-10">
+                Hỗ trợ in ấn
+              </div>
+            </div>
+          </div>
+          <div class="hv-c mb-3 wow animated fadeInRight delay-1s">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="col-10">
+                Dụng cụ thí nghiệm
+              </div>
+            </div>
+          </div>
+          <div class="hv-c mb-3 wow animated fadeInRight delay-1s">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="col-10">
+                Văn phòng phẩm
+              </div>
+            </div>
+          </div>
+          <div class="hv-c mb-3 wow animated fadeInRight delay-1s">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="col-10">
+                Âm thanh loa đài
+              </div>
+            </div>
+          </div>
+          <div class="hv-c mb-3 wow animated fadeInRight delay-1s">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="col-10">
+                Ấn phẩm truyền thông
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="get-link-form" class="mt-5 wow animated zoomIn delay-2s" onclick="window.location.href='http://bit.ly/Crowdfunding_BongDen19'">
+            Điền mẫu
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 @endsection
@@ -139,5 +313,47 @@ Trại hè Bóng Đèn 2019
 <script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
 <script type="text/javascript">
   new WOW().init();
+
+  $("#copy-c-info").on('click',function(e){
+    let text = "[STK: 0161001684663 ][Chủ tài khoản: PHAN NGUYEN HANH NHI ][Ngân hàng: Vietcombank ][Chi nhánh: Thừa Thiên Huế ][Lời nhắn: [BONGDEN]_HỌ&TÊN_SĐT ]";
+    copyToClipboard(text);
+  });
+
+  function copyToClipboard(text) {
+      if (window.clipboardData && window.clipboardData.setData) {
+          // IE specific code path to prevent textarea being shown while dialog is visible.
+          return clipboardData.setData("Text", text);
+
+      } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+          var textarea = document.createElement("textarea");
+          textarea.textContent = text;
+          textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+          document.body.appendChild(textarea);
+          textarea.select();
+          try {
+              return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+          } catch (ex) {
+              Swal.fire({
+                toast:true,
+                type:'error',
+                title:'Sao chép thất bại',
+                position:'top-end',
+                showConfirmButton:false,
+                timer:1000
+              });
+              return false;
+          } finally {
+              document.body.removeChild(textarea);
+              Swal.fire({
+                toast:true,
+                type:'success',
+                title:'Sao chép thành công',
+                position:'top-end',
+                showConfirmButton:false,
+                timer:1000
+              });
+          }
+      }
+  }
 </script>
 @endsection

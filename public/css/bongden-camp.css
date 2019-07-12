@@ -445,6 +445,94 @@ skew to change the 'thickness' of the glitch.*/
 .mi-t{
   font-family: iCielPanton-Black;
   font-size: 3em;
+  text-align: center;
+}
+
+.i-l{
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+
+.donate-form{
+  width: 100%;
+}
+
+.donate-form:first-child{
+  background-color: #ecf0f1;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.d-m-form{
+  width: 75%;
+  height: 500px;
+  background: white;
+  border-radius: 20px;
+}
+
+.d-m-form .c-gr{
+  width: 93%;
+  background-color: #ecf0f1;
+  border-radius: 35px;
+  height: 50px;
+}
+
+.d-m-form .c-gr .c-t{
+  font-family: Comfortaa-Bold;
+  font-size: 16px;
+}
+
+.d-m-form .c-gr .c-in{
+  font-family: iCielPanton-Black;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+.copy-c-btn{
+  width: 40px;
+  height: 40px;
+  background: #2ecc71;
+  color: white;
+  border-radius: 50%;
+}
+
+#copy-c-info{
+  background: #2ecc71;
+  height: 45px;
+  width: 150px;
+  border-radius: 30px;
+  color: white;
+  font-family: Comfortaa-Bold;
+}
+
+.hv-c{
+  width: 75%;
+}
+
+.hv-c *:not(i){
+  font-family: Comfortaa-Bold;
+}
+
+#get-link-form{
+  background: #e74c3c;
+  height: 45px;
+  width: 150px;
+  border-radius: 30px;
+  color: white;
+  font-family: Comfortaa-Bold;
+}
+
+.p-regis{
+  font-family: Comfortaa-Bold;
 }
 
 @media only screen and (max-width: 768px){
@@ -454,5 +542,19 @@ skew to change the 'thickness' of the glitch.*/
 
   .mi-t{
     font-size: 24px !important;
+  }
+
+  .i-l{
+      width: 100px;
+  }
+}
+
+@media only screen and (max-width: 576px){
+  .d-m-form{
+    width: 95%;
+  }
+
+  .p-regis{
+    font-size: 14px;
   }
 }

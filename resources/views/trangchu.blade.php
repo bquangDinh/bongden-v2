@@ -82,7 +82,7 @@ Bóng Đèn
                     </a>
                     <div class="info">
                       <div class="title">
-                        <p>Trại Hè Bóng Đèn 2019</p>
+                        <p>Trại hè Khoa Học Bóng Đèn 2019</p>
                       </div>
                       <div class="author">
                         <img class="avatar" src="{{ $lastest_article->user->avatar_path }}">
@@ -94,10 +94,6 @@ Bóng Đèn
                         <div>
                           Những bài học mới lạ về thế giới khoa học sẽ được Bóng Đèn truyền tải qua những hoạt động, trò chơi hết sức sinh động qua 3 ngày trại hè. Còn chờ gì nữa, hãy nhanh tay đăng ký để trở thành trại sinh của Bóng Đèn 2019.
                         </div>
-                        <div>
-                          Thời hạn đăng ký: <span id="timeleft" style="color: #e74c3c;font-weight: bold"></span> <i class="fas fa-hourglass-half animated flash infinite slow"></i>
-                        </div>
-                        <button type="button" class="btn btn-outline-danger">Trở thành trại sinh</button>
                       </div>
                     </div>
                     <div class="read-more-section">
@@ -157,21 +153,4 @@ Bóng Đèn
 <script type="text/javascript" src="{{ URL::asset('js/vendor/wow.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/vendor/slick.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/trangchu.js') }}"></script>
-<script type="text/javascript">
-  var countDownDate = new Date("Aug 3,2019 07:30:00").getTime();
-  var x = setInterval(function(){
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    $("#timeleft").text(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
-    if(distance < 0){
-      clearInterval(x);
-      $("timeleft").text("Đã hết hạn");
-      $("timeleft").css("color","#e74c3c");
-    }
-  },1000);
-</script>
 @endsection
