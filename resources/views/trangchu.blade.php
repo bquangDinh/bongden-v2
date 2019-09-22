@@ -30,7 +30,6 @@ Bóng Đèn
         <div class="col-md-11 col-sm-11">
           <div class="row">
             <div class="col-12">
-              <!--
               <div class="lastest-article">
                 <div class="row no-gutters">
                   <div class="col-lg-7 col-md-12">
@@ -67,42 +66,6 @@ Bóng Đèn
                   </div>
                 </div>
               </div>
-            -->
-            <div class="lastest-article">
-              <div class="row no-gutters">
-                <div class="col-lg-7 col-md-12">
-                  <div class="cover">
-                    <img src="https://cdn.dribbble.com/users/1855626/screenshots/4657120/attachments/1051936/forest_hi.jpg">
-                  </div>
-                </div>
-                <div class="col-lg-5 col-md-12">
-                  <div class="article-info">
-                    <a class="subject text-center" style="background: #e74c3c">
-                      Đặc biệt
-                    </a>
-                    <div class="info">
-                      <div class="title">
-                        <p>Trại hè Khoa Học Bóng Đèn 2019</p>
-                      </div>
-                      <div class="author">
-                        <img class="avatar" src="{{ $lastest_article->user->avatar_path }}">
-                        <div class="name">
-                          Bóng Đèn Team
-                        </div>
-                      </div>
-                      <div class="description">
-                        <div>
-                          Những bài học mới lạ về thế giới khoa học sẽ được Bóng Đèn truyền tải qua những hoạt động, trò chơi hết sức sinh động qua 3 ngày trại hè. Còn chờ gì nữa, hãy nhanh tay đăng ký để trở thành trại sinh của Bóng Đèn 2019.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="read-more-section">
-                      <button type="button" onclick="window.location.href = '/bongden-camp'">Tìm hiểu thêm</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             </div>
           </div>
           <br />

@@ -13,9 +13,7 @@
 
 Route::get('/','HomePageController@index')->name('homepage');
 Route::get('/article','ArticleController@articles');
-Route::get('/bongden-camp',function(){
-  return view('bongden-camp');
-});
+
 Route::get('/about_us', function () {
     return view('about_us');
 });
