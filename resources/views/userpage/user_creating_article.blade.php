@@ -68,8 +68,14 @@
   <!-- Page Heading -->
   <h1 class="h5 mb-4 text-gray-800">Nội dung</h1>
 
+  @if($errors->has('content'))
+  <p class="error-form-control-message">
+    {{ $errors->first('content') }}
+  </p>
+  @endif
+
   <div class="form-group">
-    <textarea name="content" id="textarea-content" required></textarea>
+    <textarea name="content" id="textarea-content"></textarea>
   </div>
 
   <!-- Page Heading -->

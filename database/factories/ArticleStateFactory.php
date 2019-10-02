@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(ArticleState::class, function (Faker $faker) {
     return [
-        'article_id' => $faker->unique()->numberBetween($min = 136, $max = 235),
+        'article_id' => $faker->unique()->numberBetween($min = 3, $max = 102),
         'state' => $faker->randomElement($array = array('upload','uploaded','save'))
     ];
 });

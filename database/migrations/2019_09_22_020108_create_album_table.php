@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Tags extends Migration
+class CreateAlbumTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class Tags extends Migration
      */
     public function up()
     {
-      Schema::create('tags', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('name');
-          $table->timestamps();
-      });
+        Schema::create('album', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->string('description');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -27,6 +28,6 @@ class Tags extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('album');
     }
 }

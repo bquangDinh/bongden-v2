@@ -26,7 +26,8 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title' => 'required|string|unique:article,title,'.Input::get('article_id').',id',
-            'cover' => 'required|string|url'
+            'cover' => 'required|string|url',
+            'content' => 'required|string'
         ];
     }
 }

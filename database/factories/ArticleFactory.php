@@ -11,6 +11,6 @@ $factory->define(Article::class, function (Faker $faker) {
         'cover_url' => $faker->imageUrl($width = 640, $height = 480),
         'subject_id' => $faker->numberBetween($min = 1, $max = 100),
         'content' => $faker->paragraphs($nb = 10, $asText = true),
-        'user_id' => 1
+        'user_id' => 2
     ];
 });
